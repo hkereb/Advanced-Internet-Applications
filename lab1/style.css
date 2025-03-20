@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -31,22 +32,24 @@ header nav a {
   margin: 0 10px;
 }
 
-main {
+.main {
   padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  display: flex; /* Ustawiamy flexbox na głównym kontenerze */
+  flex-wrap: wrap; /* Jeśli zabraknie miejsca, elementy przełamią się do nowego wiersza */
+  gap: 20px; /* Odstęp między elementami */
 }
-main .boxes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+
+.boxes {
+  display: flex; /* Ustawiamy flexbox na kontenerze .boxes */
+  gap: 20px; /* Odstęp między elementami .boxes */
 }
-main .boxes div {
+
+.boxes div {
   background: #e0e4cc;
   padding: 15px;
   border-radius: 5px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  width: 200px; /* Szerokość każdego elementu */
 }
 
 footer {
@@ -54,4 +57,11 @@ footer {
   padding: 15px;
   background: #e0e4cc;
   color: black;
+  border-top: 2px solid #333;
+  line-height: 0.5;
+  font-size: 16px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
