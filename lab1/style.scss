@@ -18,23 +18,24 @@ header {
     h1 {
         font-family: 'Lora', serif;
         font-weight: 300;
-        font-size: 40px;
+        font-size: 32px;
         margin-left: 15px;
+    }
+
+    nav {
+        margin-left: auto; 
+        text-align: right;
+        padding: 10px;
+        
+        a {
+            color: black;
+            text-decoration: none;
+            margin: 0 10px;
+        }
     }
 }
 
-// Nawigacja
-nav {
-    text-align: center;
-    padding: 10px;
-    background: white;
-    
-    a {
-        color: black;
-        text-decoration: none;
-        margin: 0 10px;
-    }
-}
+
 
 // Stylizacja sekcji głównej
 main {
