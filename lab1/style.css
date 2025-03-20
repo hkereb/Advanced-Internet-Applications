@@ -1,1 +1,58 @@
-/*# sourceMappingURL=style.css.map */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+header img {
+  width: 80px;
+  height: auto;
+}
+header h1 {
+  font-family: "Lora", serif;
+  font-weight: 300;
+  font-size: 40px;
+  margin-left: 15px;
+}
+
+nav {
+  text-align: center;
+  padding: 10px;
+  background: white;
+}
+nav a {
+  color: black;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+main {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+main .boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+main .boxes div {
+  background: #e0e4cc;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #e0e4cc;
+  color: black;
+}/*# sourceMappingURL=style.css.map */
