@@ -44,6 +44,7 @@ header {
 
 .boxes {
     display: flex; /* Ustawiamy flexbox na kontenerze .boxes */
+    justify-content: center; /* Wyśrodkowanie poziome */
     gap: 20px; /* Odstęp między elementami .boxes */
 }
 
@@ -51,8 +52,9 @@ header {
     background: #e0e4cc;
     padding: 15px;
     border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    width: 200px; /* Szerokość każdego elementu */
+    width: 400px; /* Szerokość każdego elementu */
+    max-height: 300px;
+    overflow: hidden;
 }
 
 
