@@ -1,9 +1,21 @@
+$def-border: 2px solid black;
+$def-font-size: 16px;
+$title-font-size: 32px;
+$section-font-size: 24px;
+$max-mobile: 600px;
+$max-tablet: 1024px;
+$min-desktop: 1025px;
+
 header {
     display: flex;
     align-items: center;
-    padding: 10px;
     
-    img {
+    // logo + title disappear when on mobile
+    @media all and (max-width: $max-mobile) {
+        display: none;
+    }
+
+    .logo {
         width: 80px;
         height: auto;
     }
@@ -11,7 +23,7 @@ header {
     h1 {
         font-family: 'Lora', serif;
         font-weight: 300;
-        font-size: 32px;
+        font-size: $title-font-size;
         margin-left: 15px;
     }
 
@@ -61,10 +73,11 @@ body {
     height: 310px;
     max-height: 310px;
     overflow: hidden;
-    border: 2px solid black; 
+    border: $def-border; 
     padding-top: 100px;
 
     h2 {
+        font-weight: 200;
         display: flex; 
         justify-content: center; 
         align-items: center;
@@ -75,13 +88,14 @@ body {
         top: 5px;
         right: 5px;
         padding: 5px 10px;
-        border: 2px solid black; 
-        font-size: 20px;
+        border: $def-border; 
+        font-size: $section-font-size;
         color: black;
     }
 
     p {
         padding: 0px 15px 0px 15px;
+        font-size: $def-font-size;
     }
 }
 
@@ -99,15 +113,18 @@ body {
 
 
 footer {
-    text-align: center;
     padding: 15px;
     background: #e0e4cc;
-    color: black;
-    border-top: 2px solid #333;
+    border-top: $def-border;
     line-height: 0.5;
-    font-size: 16px;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
+
+    p {
+        font-size: $def-font-size;
+        color: black;
+        text-align: center;
+    }
 }
