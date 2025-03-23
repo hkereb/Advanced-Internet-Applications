@@ -1,11 +1,3 @@
-@charset "UTF-8";
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 header {
   display: flex;
   align-items: center;
@@ -24,7 +16,8 @@ header h1 {
 header nav {
   margin-left: auto;
   text-align: right;
-  padding: 10px;
+  padding-top: 0px;
+  transform: translateY(-15px);
 }
 header nav a {
   color: black;
@@ -32,26 +25,69 @@ header nav a {
   margin: 0 10px;
 }
 
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
 .main {
   padding: 20px;
-  display: flex; /* Ustawiamy flexbox na głównym kontenerze */
-  flex-wrap: wrap; /* Jeśli zabraknie miejsca, elementy przełamią się do nowego wiersza */
-  gap: 20px; /* Odstęp między elementami */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .boxes {
-  display: flex; /* Ustawiamy flexbox na kontenerze .boxes */
-  justify-content: center; /* Wyśrodkowanie poziome */
-  gap: 20px; /* Odstęp między elementami .boxes */
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding-top: 50px;
 }
 
 .boxes div {
+  position: relative;
   background: #e0e4cc;
-  padding: 15px;
-  border-radius: 5px;
-  width: 400px; /* Szerokość każdego elementu */
-  max-height: 300px;
+  width: 400px;
+  height: 310px;
+  max-height: 310px;
   overflow: hidden;
+  border: 2px solid black;
+  padding-top: 100px;
+}
+.boxes div h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  text-align: right;
+  width: 220px;
+  height: 40px;
+  top: 5px;
+  right: 5px;
+  padding: 5px 10px;
+  border: 2px solid black;
+  font-size: 20px;
+  color: black;
+}
+.boxes div p {
+  padding: 0px 15px 0px 15px;
+}
+
+.box1 h2 {
+  background: #69d2e7;
+}
+
+.box2 h2 {
+  background: #f38630;
+}
+
+.box3 h2 {
+  background: #e9aeaf;
 }
 
 footer {
