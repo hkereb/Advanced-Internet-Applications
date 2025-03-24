@@ -41,18 +41,22 @@ body {
 }
 
 .box-title {
-  width: 100%;
-  height: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid black;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
 }
 .box-title h2 {
   margin: 0;
   padding: 10px;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: bold;
   color: black;
 }
 
@@ -75,9 +79,11 @@ body {
 }
 
 .box1, .box2, .box3 {
+  position: relative;
   width: 400px;
+  height: auto;
   background-color: #e0e4cc;
-  padding: 20px;
+  padding: 80px 15px 15px 15px;
   border: 2px solid black;
   display: flex;
   flex-direction: column;
@@ -85,8 +91,9 @@ body {
   text-align: center;
 }
 .box1 p, .box2 p, .box3 p {
-  padding: 0px 15px 0px 15px;
+  padding: 0px 10px 0px 10px;
   font-size: 16px;
+  text-align: justify;
 }
 
 footer {
