@@ -5,10 +5,16 @@ $section-font-size: 24px;
 $max-mobile: 600px;
 $max-tablet: 1024px;
 $min-desktop: 1025px;
+$main-color: #e0e4cc;
+$box1-color: #69d2e7;
+$box2-color: #f38630;
+$box3-color: #e9aeaf;
+
 
 header {
     display: flex;
     align-items: center;
+    margin: 30px 30px 0px 30px;
     
     // logo + title disappear when on mobile
     @media all and (max-width: $max-mobile) {
@@ -24,7 +30,6 @@ header {
         font-family: 'Lora', serif;
         font-weight: 300;
         font-size: $title-font-size;
-        margin-left: 15px;
     }
 
     nav {
@@ -42,75 +47,58 @@ header {
 }
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding-top: 20px;
-    padding-bottom: 20px;  
-    padding-left: 20px;
-    padding-right: 20px;    
+    font-family: Arial, sans-serif;  
     box-sizing: border-box;
 }
 
 .main {
-    padding: 20px;
     display: flex; 
     flex-wrap: wrap; 
-    gap: 20px;
+    flex: 1 0 auto;
 }
 
-.boxes {
-    display: flex; 
+.box-title {
+    width: 100%;
+    height: 50px;
+    display: flex;
     justify-content: center;
-    gap: 30px; 
-    padding-top: 50px;
-}
-
-// all boxes
-.boxes div { 
-    position: relative;
-    background: #e0e4cc;
-    width: 400px; 
-    height: 310px;
-    max-height: 310px;
-    overflow: hidden;
-    border: $def-border; 
-    padding-top: 100px;
-
+    align-items: center;
+    border: $def-border;
+    
     h2 {
-        font-weight: 200;
-        display: flex; 
-        justify-content: center; 
-        align-items: center;
-        position: absolute;
-        text-align: right;
-        width: 220px;
-        height: 40px;
-        top: 5px;
-        right: 5px;
-        padding: 5px 10px;
-        border: $def-border; 
-        font-size: $section-font-size;
+        margin: 0;
+        padding: 10px;
+        font-size: 20px;
+        font-weight: 600;
         color: black;
     }
+}
+
+.box1 .box-title { background: #69d2e7; }
+.box2 .box-title { background: #f38630; }
+.box3 .box-title { background: #e9aeaf; }
+
+.boxes {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 40px;
+}
+
+.box1, .box2, .box3 {
+    width: 400px;
+    background-color: #e0e4cc;
+    padding: 20px;
+    border: $def-border;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 
     p {
         padding: 0px 15px 0px 15px;
         font-size: $def-font-size;
     }
 }
-
-.box1 h2 {
-    background: #69d2e7; 
-}
-
-.box2 h2 {
-    background: #f38630; 
-}
-
-.box3 h2 {
-    background: #e9aeaf; 
-}
-
 
 footer {
     padding: 15px;
