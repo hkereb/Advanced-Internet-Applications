@@ -115,7 +115,7 @@ body {
 
 .box1, .box2, .box3 {
     position: relative;
-    //width: 400px;
+    width: 400px;
     height: auto;
     background-color: $main-color;
     padding: 80px 15px 15px 15px;
@@ -162,7 +162,7 @@ footer {
     }
 
     .box1 {
-        flex: 1 1 95%; /* Box1 zajmuje całą szerokość */
+        flex: 1 1 100%; 
     }
 
     .box2, .box3 {
