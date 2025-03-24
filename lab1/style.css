@@ -1,7 +1,7 @@
 header {
   display: flex;
-  margin: 30px 30px 0px 30px;
   flex-direction: row;
+  margin: 30px 30px 0px 30px;
 }
 header .page-title {
   display: flex;
@@ -30,8 +30,8 @@ header nav {
   gap: 20px;
 }
 header nav a {
-  color: black;
   text-decoration: none;
+  color: black;
   margin: 0 10px;
 }
 @media all and (max-width: 1024px) {
@@ -65,7 +65,14 @@ body {
   flex: 1 0 auto;
 }
 
-.box-title {
+.boxes {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 40px;
+  flex-direction: row;
+  gap: 20px;
+}
+.boxes .box-title {
   position: absolute;
   top: 0;
   right: 0;
@@ -77,32 +84,17 @@ body {
   border-left: 2px solid black;
   border-bottom: 2px solid black;
 }
-.box-title h2 {
+.boxes .box-title h2 {
   margin: 0;
   padding: 10px;
   font-size: 20px;
   font-weight: bold;
   color: black;
 }
-
-.box1 .box-title {
-  background: #69d2e7;
-}
-
-.box2 .box-title {
-  background: #f38630;
-}
-
-.box3 .box-title {
-  background: #e9aeaf;
-}
-
-.boxes {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 40px;
-  flex-direction: row;
-  gap: 20px;
+.boxes .box-text {
+  padding: 0px 10px 0px 10px;
+  font-size: 16px;
+  text-align: justify;
 }
 
 .box1, .box2, .box3 {
@@ -117,10 +109,17 @@ body {
   align-items: center;
   text-align: center;
 }
-.box1 .box-text, .box2 .box-text, .box3 .box-text {
-  padding: 0px 10px 0px 10px;
-  font-size: 16px;
-  text-align: justify;
+
+.box1 .box-title {
+  background: #69d2e7;
+}
+
+.box2 .box-title {
+  background: #f38630;
+}
+
+.box3 .box-title {
+  background: #e9aeaf;
 }
 
 footer {
@@ -141,11 +140,6 @@ footer p {
 @media all and (min-width: 1025px) {
   footer {
     position: fixed;
-  }
-}
-@media all and (max-width: 600px) {
-  footer {
-    display: none;
   }
 }
 

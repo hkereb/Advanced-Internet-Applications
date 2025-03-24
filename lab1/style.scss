@@ -10,11 +10,22 @@ $box1-color: #69d2e7;
 $box2-color: #f38630;
 $box3-color: #e9aeaf;
 
+@mixin mobile {
+    @media all and (max-width: $max-mobile) { @content; }
+}
+
+@mixin tablet-and-mobile {
+    @media all and (max-width: $max-tablet) { @content; }
+}
+
+@mixin desktop {
+    @media all and (min-width: $min-desktop) { @content; }
+} 
 
 header {
     display: flex;
-    margin: 30px 30px 0px 30px;
     flex-direction: row;
+    margin: 30px 30px 0px 30px;
 
     .page-title {
         display: flex;
@@ -29,6 +40,7 @@ header {
             font-family: 'Lora', serif;
             font-weight: 300;
             font-size: $title-font-size;
+            
             margin-left: 10px;
 
             // title disappears, logo stays
@@ -46,10 +58,12 @@ header {
         gap: 20px;
         
         a {
-            color: black;
+            // turn off underline
             text-decoration: none;
+            color: black;
             margin: 0 10px;
 
+            // hide when smaller than desktop
             @media all and (max-width: $max-tablet) {
                 display: none;
             }
@@ -62,7 +76,8 @@ header {
             border: $def-border;
             border-radius: 8px;
 
-            @media all and (min-width: $min-desktop) {
+            // hide when desktop
+            @include desktop {
                 display: none;
             }
         }
@@ -82,37 +97,39 @@ body {
     flex: 1 0 auto;
 }
 
-.box-title {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 60%;
-    height: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-left: $def-border;
-    border-bottom: $def-border;
-    
-    h2 {
-        margin: 0;
-        padding: 10px;
-        font-size: 20px;
-        font-weight: bold;
-        color: black;
-    }
-}
-
-.box1 .box-title { background: $box1-color; }
-.box2 .box-title { background: $box2-color; }
-.box3 .box-title { background: $box3-color; }
-
 .boxes {
     display: flex;
     justify-content: space-evenly;
     margin-top: 40px;
     flex-direction: row;
     gap: 20px;
+
+    .box-title {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60%;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-left: $def-border;
+        border-bottom: $def-border;
+        
+        h2 {
+            margin: 0;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: black;
+        }
+    }
+
+    .box-text {
+        padding: 0px 10px 0px 10px;
+        font-size: $def-font-size;
+        text-align: justify;
+    }
 }
 
 .box1, .box2, .box3 {
@@ -126,13 +143,11 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-
-    .box-text {
-        padding: 0px 10px 0px 10px;
-        font-size: $def-font-size;
-        text-align: justify;
-    }
 }
+
+.box1 .box-title { background: $box1-color; }
+.box2 .box-title { background: $box2-color; }
+.box3 .box-title { background: $box3-color; }
 
 footer {
     padding: 15px;
@@ -150,20 +165,14 @@ footer {
         text-align: center;
     }
 
-    @media all and (min-width: $min-desktop) {
+    // fixed when desktop
+    @include desktop {
         position: fixed;
     }
-    @media all and (max-width: $max-tablet) {
-        //display: none;
-    }
-
-    @media all and (max-width: $max-mobile) {
-        display: none;
-    }
-
 }
 
-@media all and (max-width: $max-tablet) {
+// placement of boxes in different display sizes
+@include tablet-and-mobile { 
     .boxes {
         display: flex;
         flex-wrap: wrap; 
@@ -177,11 +186,9 @@ footer {
 
     .box2, .box3 {
         flex: 1 1 20%; 
-        //margin: 0 5%; 
     }
 }
-
-@media all and (max-width: $max-mobile) {
+@include mobile { 
     .boxes {
         display: flex;
         flex-direction: column; 
