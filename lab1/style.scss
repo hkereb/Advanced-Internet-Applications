@@ -109,11 +109,13 @@ body {
     display: flex;
     justify-content: space-evenly;
     margin-top: 40px;
+    flex-direction: row;
+    flex: 1 0 auto;
 }
 
 .box1, .box2, .box3 {
     position: relative;
-    width: 400px;
+    //width: 400px;
     height: auto;
     background-color: $main-color;
     padding: 80px 15px 15px 15px;
@@ -145,17 +147,27 @@ footer {
         color: black;
         text-align: center;
     }
+
+    @media all and (max-width: $max-mobile) {
+        display: none;
+    }
+
 }
 
 @media all and (max-width: $max-tablet) {
     .boxes {
         display: flex;
         flex-wrap: wrap; 
-        flex: 1 0 40%;
+        gap: 20px; 
     }
 
-    .boxes:first-child {
-        flex: 0 1 100%;
+    .box1 {
+        flex: 1 1 95%; /* Box1 zajmuje całą szerokość */
+    }
+
+    .box2, .box3 {
+        flex: 1 1 20%; 
+        //margin: 0 5%; 
     }
 }
 
