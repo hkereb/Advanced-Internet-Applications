@@ -40,9 +40,10 @@ header {
 
     nav {
         margin-left: auto; 
+        margin-top: 15px;
         text-align: right;
-        padding-top: 0px;
-        transform: translateY(-15px);
+        display: flex;
+        gap: 20px;
         
         a {
             color: black;
@@ -55,8 +56,11 @@ header {
         }
 
         #burger{
-            width: 30px;
-            height: auto;
+            width: 45px;
+            height: 45px;
+            background: $main-color;
+            border: $def-border;
+            border-radius: 8px;
 
             @media all and (min-width: $min-desktop) {
                 display: none;

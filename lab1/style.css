@@ -24,9 +24,10 @@ header .page-title h1 {
 }
 header nav {
   margin-left: auto;
+  margin-top: 15px;
   text-align: right;
-  padding-top: 0px;
-  transform: translateY(-15px);
+  display: flex;
+  gap: 20px;
 }
 header nav a {
   color: black;
@@ -39,8 +40,11 @@ header nav a {
   }
 }
 header nav #burger {
-  width: 30px;
-  height: auto;
+  width: 45px;
+  height: 45px;
+  background: #e0e4cc;
+  border: 2px solid black;
+  border-radius: 8px;
 }
 @media all and (min-width: 1025px) {
   header nav #burger {
