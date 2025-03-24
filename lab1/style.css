@@ -90,7 +90,7 @@ body {
   align-items: center;
   text-align: center;
 }
-.box1 p, .box2 p, .box3 p {
+.box1 .box-text, .box2 .box-text, .box3 .box-text {
   padding: 0px 10px 0px 10px;
   font-size: 16px;
   text-align: justify;
@@ -110,4 +110,22 @@ footer p {
   font-size: 16px;
   color: black;
   text-align: center;
+}
+
+@media all and (max-width: 1024px) {
+  .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 0 40%;
+  }
+  .boxes:first-child {
+    flex: 0 1 100%;
+  }
+}
+@media all and (max-width: 600px) {
+  .boxes {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+  }
 }/*# sourceMappingURL=style.css.map */
