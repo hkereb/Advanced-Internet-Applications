@@ -13,23 +13,29 @@ $box3-color: #e9aeaf;
 
 header {
     display: flex;
-    align-items: center;
     margin: 30px 30px 0px 30px;
-    
-    // logo + title disappear when on mobile
-    @media all and (max-width: $max-mobile) {
-        display: none;
-    }
+    flex-direction: row;
 
-    .logo {
-        width: 80px;
-        height: auto;
-    }
-    
-    h1 {
-        font-family: 'Lora', serif;
-        font-weight: 300;
-        font-size: $title-font-size;
+    .page-title {
+        display: flex;
+        flex-direction: row;
+
+        .logo {
+            width: 80px;
+            height: auto;
+        }
+        
+        h1 {
+            font-family: 'Lora', serif;
+            font-weight: 300;
+            font-size: $title-font-size;
+            margin-left: 10px;
+
+            // title disappears, logo stays
+            @media all and (max-width: $max-mobile) {
+                display: none;
+            }
+        }
     }
 
     nav {
@@ -42,6 +48,19 @@ header {
             color: black;
             text-decoration: none;
             margin: 0 10px;
+
+            @media all and (max-width: $max-tablet) {
+                display: none;
+            }
+        }
+
+        #burger{
+            width: 30px;
+            height: auto;
+
+            @media all and (min-width: $min-desktop) {
+                display: none;
+            }
         }
     }
 }

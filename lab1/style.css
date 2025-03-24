@@ -1,21 +1,26 @@
 header {
   display: flex;
-  align-items: center;
   margin: 30px 30px 0px 30px;
+  flex-direction: row;
 }
-@media all and (max-width: 600px) {
-  header {
-    display: none;
-  }
+header .page-title {
+  display: flex;
+  flex-direction: row;
 }
-header .logo {
+header .page-title .logo {
   width: 80px;
   height: auto;
 }
-header h1 {
+header .page-title h1 {
   font-family: "Lora", serif;
   font-weight: 300;
   font-size: 32px;
+  margin-left: 10px;
+}
+@media all and (max-width: 600px) {
+  header .page-title h1 {
+    display: none;
+  }
 }
 header nav {
   margin-left: auto;
@@ -27,6 +32,20 @@ header nav a {
   color: black;
   text-decoration: none;
   margin: 0 10px;
+}
+@media all and (max-width: 1024px) {
+  header nav a {
+    display: none;
+  }
+}
+header nav #burger {
+  width: 30px;
+  height: auto;
+}
+@media all and (min-width: 1025px) {
+  header nav #burger {
+    display: none;
+  }
 }
 
 body {
