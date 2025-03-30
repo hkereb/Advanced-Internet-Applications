@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+
+    h1 {
+        color: #547463;
+    }
+
+    form {
+        margin-top: 15px;
+        margin-bottom: 25px;
+    }
+
+    table {
+        width: 80%; 
+        border-collapse: collapse;
+        table-layout: fixed; 
+    }   
+
+    th, td {
+        border: 1px solid #6e917f;
+        padding: 8px;
+        text-align: center;
+        width: 50%; 
+    }
+
+    th { color: #547463; }
+    td { color:#6e917f; }
+
+    input {
+        height: 25px;
+        padding: 2px 2px 2px 2px;
+        width: 70%;
+    }
+}
+
+.color {
+    background-color: #d4e0da;
+}

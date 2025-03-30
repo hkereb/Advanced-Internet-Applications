@@ -1,52 +1,73 @@
 document.getElementById('add-button').addEventListener('click', function() {
-    var table = document.getElementById('book-list');
-    var row = table.insertRow(-1);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
+    let table = document.getElementById('item-list');
 
-    cell1.innerHTML = '<input type="text" id="edit-title">';
-    cell2.innerHTML = '<input type="text" id="edit-author">';
-    cell3.innerHTML = '<button onclick="saveItem(this)">Save</button><button onclick="removeItem(this)">Remove</button>';
+    if (document.querySelector('.editing')) {
+        return;
+    }
+
+    let row = table.insertRow(-1); // -1 to add at the end
+    row.classList.add('editing');
+
+    let cell1 = row.insertCell(0); // title
+    let cell2 = row.insertCell(1); // author
+    let cell3 = row.insertCell(2); // buttons
+
+    cell1.innerHTML = '<input type="text" id="title-cell">';
+    cell2.innerHTML = '<input type="text" id="author-cell">';
+    cell3.innerHTML = '<button onclick="saveItem(this)">Save</button> <button onclick="removeItem(this)">Remove</button>';
 
     updateRowColors();
 });
 
-function saveItem(btn) {
-    var row = btn.parentNode.parentNode;
-    var name = document.getElementById('edit-name').value;
-    var quantity = document.getElementById('edit-quantity').value;
+function saveItem(clickedBtn) {
+    let row = clickedBtn.parentNode.parentNode;
+    let title = document.getElementById('title-cell').value;
+    let author = document.getElementById('author-cell').value;
 
-    row.cells[0].innerHTML = name;
-    row.cells[1].innerHTML = quantity;
-    row.cells[2].innerHTML = '<button onclick="editItem(this)">Edit</button><button onclick="removeItem(this)">Remove</button>';
+    if (title === '') {
+        return;
+    }
+
+    row.cells[0].innerHTML = title;
+    row.cells[1].innerHTML = author;
+    row.cells[2].innerHTML = '<button onclick="editItem(this)">Edit</button> <button onclick="removeItem(this)">Remove</button>';
+
+    row.classList.remove('editing'); // Usunięcie klasy oznaczającej edycję
 
     updateRowColors();
 }
 
-function editItem(btn) {
-    var row = btn.parentNode.parentNode;
-    var name = row.cells[0].innerText;
-    var quantity = row.cells[1].innerText;
+function editItem(clickedBtn) {
+    let row = clickedBtn.parentNode.parentNode;
 
-    row.cells[0].innerHTML = '<input type="text" id="edit-name" value="' + name + '">';
-    row.cells[1].innerHTML = '<input type="number" id="edit-quantity" value="' + quantity + '">';
-    row.cells[2].innerHTML = '<button onclick="saveItem(this)">Save</button><button onclick="removeItem(this)">Remove</button>';
+    if (document.querySelector('.editing')) {
+        return;
+    }
+
+    let title = row.cells[0].innerText;
+    let author = row.cells[1].innerText;
+
+    row.classList.add('editing');
+
+    row.cells[0].innerHTML = '<input type="text" id="title-cell" value="' + title + '">';
+    row.cells[1].innerHTML = '<input type="txt" id="author-cell" value="' + author + '">';
+    row.cells[2].innerHTML = '<button onclick="saveItem(this)">Save</button> <button onclick="removeItem(this)">Remove</button>';
 }
 
-function removeItem(btn) {
-    var row = btn.parentNode.parentNode;
+function removeItem(clickedBtn) {
+    let row = clickedBtn.parentNode.parentNode;
     row.remove();
+
     updateRowColors();
 }
 
 function updateRowColors() {
-    var table = document.getElementById('item-list');
-    for (var i = 1; i < table.rows.length; i++) {
+    let table = document.getElementById('item-list');
+    for (let i = 1; i < table.rows.length; i++) {
         if (i % 2 === 0) {
-            table.rows[i].classList.add('alternate');
+            table.rows[i].classList.add('color');
         } else {
-            table.rows[i].classList.remove('alternate');
+            table.rows[i].classList.remove('color');
         }
     }
 }
