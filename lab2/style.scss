@@ -33,6 +33,13 @@ body {
     th { color: #547463; }
     td { color:#6e917f; }
 
+    td:nth-child(3) { // 3rd column (buttons)
+        display: flex;
+        flex-direction: row;
+        border: 1px solid #ffffff00;
+        gap: 5px;
+    }
+
     input {
         height: 25px;
         padding: 2px 2px 2px 2px;
