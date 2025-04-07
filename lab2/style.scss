@@ -12,6 +12,7 @@ body {
         color: #547463;
     }
 
+    // add button
     form {
         margin-top: 15px;
         margin-bottom: 25px;
@@ -21,7 +22,11 @@ body {
         width: 80%; 
         border-collapse: collapse;
         table-layout: fixed; 
-    }   
+    } 
+    
+    // th - table header
+    // td - table data cell
+    // tr - table row
 
     th, td {
         border: 1px solid #6e917f;
@@ -35,8 +40,8 @@ body {
 
     td:nth-child(3) { // 3rd column (buttons)
         display: flex;
-        flex-direction: row;
-        border: 1px solid #ffffff00;
+        flex-direction: row; // buttons next to each other
+        border: 0;
         gap: 5px;
     }
 
