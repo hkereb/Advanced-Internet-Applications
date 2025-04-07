@@ -6,6 +6,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const elixirs = await getElixirs();
     renderElixirsList(elixirs);
   } catch (error) {
-    document.getElementById('elixirs-list').textContent = "Error can't load data";
+    console.error("Error cannot load data: ", error);
   }
 });
