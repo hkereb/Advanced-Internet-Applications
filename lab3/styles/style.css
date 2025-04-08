@@ -1,1 +1,16 @@
-/*# sourceMappingURL=style.css.map */
+.elixir-item {
+  cursor: pointer;
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+.elixir-item:hover {
+  background-color: #f0f0f0;
+}
+
+.elixir-details {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #aaa;
+  background-color: #fff7e6;
+}/*# sourceMappingURL=style.css.map */
