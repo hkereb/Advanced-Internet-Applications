@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .elixir-item {
   cursor: pointer;
   padding: 8px;
@@ -13,4 +14,36 @@
   padding: 10px;
   border: 1px solid #aaa;
   background-color: #fff7e6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+header .controls-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Wyrównuje je w pionie */
+  gap: 3px;
+  flex-grow: 0; /* Zapewnia, że divy nie będą się rozszerzać poza swój naturalny rozmiar */
+}
+
+#search-bar input {
+  width: 300px; /* Możesz dostosować szerokość search bar */
+}
+
+#difficulty-filter select {
+  width: 300px; /* Ustaw odpowiednią szerokość select */
+  height: 21px; /* Możesz dostosować wysokość */
+}
+
+body {
+  margin: 0px 20px 0px 20px;
 }/*# sourceMappingURL=style.css.map */

@@ -2,16 +2,50 @@
     cursor: pointer;
     padding: 8px;
     border-bottom: 1px solid #ccc;
-  }
-  
-  .elixir-item:hover {
+}
+
+.elixir-item:hover {
     background-color: #f0f0f0;
-  }
-  
-  .elixir-details {
+}
+
+.elixir-details {
     margin-top: 20px;
     padding: 10px;
     border: 1px solid #aaa;
     background-color: #fff7e6;
-  }
-  
+}
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 30px;
+    margin-top: 10px;
+
+    .controls-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center; /* Wyrównuje je w pionie */
+        gap: 3px;
+        flex-grow: 0; /* Zapewnia, że divy nie będą się rozszerzać poza swój naturalny rozmiar */
+    }    
+}
+
+#search-bar input {
+    width: 300px; /* Możesz dostosować szerokość search bar */
+}
+
+#difficulty-filter select {
+    width: 300px; /* Ustaw odpowiednią szerokość select */
+    height: 21px; /* Możesz dostosować wysokość */
+}
+
+body {
+    margin: 0px 20px 0px 20px;   
+}
+
+

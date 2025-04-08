@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <script type="module" src="app.js"></script>
         <!-- "module" already makes it asynchronous - no need for async -->
+        <script type="module" src="app.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/style.css">
         <meta charset="UTF-8">
         <title>Harry Potter Elixirs</title>
-        <link rel="stylesheet" href="styles/style.css">
     </head>
-    <header>
-        <h1>Harry Potter Elixirs</h1>
-        <div id="search-bar"></div>
-    </header>
+
     <body>
-        <div class="app-container"></div>
+        <header>
+            <h1>Harry Potter Elixirs</h1>
+            <div class="controls-wrapper">
+                <div id="search-bar"></div>
+                <div id="difficulty-filter"></div>
+            </div>
+        </header>
+
+        <div class="main">
             <div id="elixirs-list"></div>
             <div id="elixir-details"></div>
         </div>

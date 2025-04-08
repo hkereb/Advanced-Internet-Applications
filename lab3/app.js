@@ -19,19 +19,15 @@ document.addEventListener('DOMContentLoaded', async () => {
       filterAndRender();
     });
 
-    // Tworzymy i dodajemy filtr po difficulty
+    // Zamiast tworzyć filtr difficulty w JavaScript, przypisujemy go do istniejącego elementu
+    const difficultyFilterContainer = document.getElementById('difficulty-filter');
     const difficultyFilter = createDifficultyFilter(diff => {
       selectedDifficulty = diff;
       filterAndRender();
     });
 
-    // Opakowanie do wspólnego wyświetlenia
-    const controlsWrapper = document.createElement('div');
-    controlsWrapper.classList.add('controls-wrapper');
-    controlsWrapper.appendChild(searchBar);
-    controlsWrapper.appendChild(difficultyFilter);
-
-    searchBarContainer.appendChild(controlsWrapper);
+    searchBarContainer.appendChild(searchBar);
+    difficultyFilterContainer.appendChild(difficultyFilter);
 
     // Początkowe wyświetlenie eliksirów
     renderElixirsList(allElixirs);
