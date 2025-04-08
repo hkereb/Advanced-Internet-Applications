@@ -1,21 +1,4 @@
 @charset "UTF-8";
-.elixir-item {
-  cursor: pointer;
-  padding: 8px;
-  border-bottom: 1px solid #ccc;
-}
-
-.elixir-item:hover {
-  background-color: #f0f0f0;
-}
-
-.elixir-details {
-  margin-top: 20px;
-  padding: 10px;
-  border: 1px solid #aaa;
-  background-color: #fff7e6;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -27,7 +10,7 @@ header {
   margin-bottom: 30px;
   margin-top: 10px;
 }
-header .controls-wrapper {
+header .search {
   display: flex;
   flex-direction: row;
   align-items: center; /* Wyrównuje je w pionie */
@@ -36,14 +19,36 @@ header .controls-wrapper {
 }
 
 #search-bar input {
-  width: 300px; /* Możesz dostosować szerokość search bar */
+  width: 340px; /* Możesz dostosować szerokość search bar */
 }
 
 #difficulty-filter select {
-  width: 300px; /* Ustaw odpowiednią szerokość select */
+  width: 340px; /* Ustaw odpowiednią szerokość select */
   height: 21px; /* Możesz dostosować wysokość */
 }
 
 body {
   margin: 0px 20px 0px 20px;
+}
+body .main {
+  display: flex; /* Używamy flexboxa, by ustawić kolumny obok siebie */
+  flex-direction: row; /* Ustawiamy kierunek wiersza (domyślnie jest to 'row') */
+  gap: 20px; /* Możesz dodać przerwę między kolumnami, jeśli chcesz */
+}
+body #elixirs-list, body #elixir-details {
+  flex: 1; /* Sprawia, że obie kolumny zajmują po równo szerokości */
+}
+body .elixir-item {
+  cursor: pointer;
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
+body .elixir-item:hover {
+  background-color: #e0ebe5;
+}
+body .elixir-details {
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px solid #aaa;
+  background-color: #e0ebe5;
 }/*# sourceMappingURL=style.css.map */
