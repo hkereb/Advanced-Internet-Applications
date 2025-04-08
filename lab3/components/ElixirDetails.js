@@ -1,6 +1,6 @@
 export function renderElixirDetails(elixir) {
   const detailsContainer = document.getElementById('elixir-details');
-  detailsContainer.innerHTML = ''; // Clear previous details
+  detailsContainer.innerHTML = ''; 
 
   const details = document.createElement('div');
   details.classList.add('elixir-details');

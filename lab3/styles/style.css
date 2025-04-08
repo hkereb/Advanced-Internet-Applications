@@ -1,42 +1,44 @@
-@charset "UTF-8";
 * {
   box-sizing: border-box;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-  margin-top: 10px;
-}
-header .search {
-  display: flex;
-  flex-direction: row;
-  align-items: center; /* Wyrównuje je w pionie */
-  gap: 3px;
-  flex-grow: 0; /* Zapewnia, że divy nie będą się rozszerzać poza swój naturalny rozmiar */
-}
-
-#search-bar input {
-  width: 340px; /* Możesz dostosować szerokość search bar */
-}
-
-#difficulty-filter select {
-  width: 340px; /* Ustaw odpowiednią szerokość select */
-  height: 21px; /* Możesz dostosować wysokość */
 }
 
 body {
   margin: 0px 20px 0px 20px;
 }
+body header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+body header h1 {
+  color: #547463;
+}
+body header .search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3px;
+  width: 49.3%;
+  margin-top: 4px;
+}
+body header .search #search-bar input {
+  width: 100%;
+}
+body header .search #difficulty-filter select {
+  height: 21px;
+  width: 100%;
+}
+body header .search #search-bar, body header .search #difficulty-filter {
+  width: 50%;
+}
 body .main {
-  display: flex; /* Używamy flexboxa, by ustawić kolumny obok siebie */
-  flex-direction: row; /* Ustawiamy kierunek wiersza (domyślnie jest to 'row') */
-  gap: 20px; /* Możesz dodać przerwę między kolumnami, jeśli chcesz */
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 body #elixirs-list, body #elixir-details {
-  flex: 1; /* Sprawia, że obie kolumny zajmują po równo szerokości */
+  flex: 1;
 }
 body .elixir-item {
   cursor: pointer;
@@ -47,8 +49,11 @@ body .elixir-item:hover {
   background-color: #e0ebe5;
 }
 body .elixir-details {
-  margin-top: 15px;
   padding: 10px;
   border: 1px solid #aaa;
   background-color: #e0ebe5;
+  position: sticky;
+  top: 20px;
+  min-height: 300px;
+  overflow-y: auto;
 }/*# sourceMappingURL=style.css.map */

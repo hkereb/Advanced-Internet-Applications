@@ -6,7 +6,7 @@ export function renderElixirsList(elixirs) {
 
   elixirs.forEach(elixir => {
     const newElixir = document.createElement('div');
-    newElixir.textContent = `${elixir.name} - ${elixir.difficulty}`;
+    newElixir.textContent = `${elixir.name}`;
     newElixir.classList.add('elixir-item');
 
     newElixir.addEventListener('click', () => {
