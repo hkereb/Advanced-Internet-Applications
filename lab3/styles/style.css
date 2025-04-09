@@ -24,10 +24,14 @@ body header .search {
 }
 body header .search #search-bar input {
   width: 100%;
+  border: solid 1px #739080;
+  color: #466454;
 }
 body header .search #difficulty-filter select {
-  height: 21px;
+  height: 20px;
   width: 100%;
+  border: solid 1px #739080;
+  color: #466454;
 }
 body header .search #search-bar, body header .search #difficulty-filter {
   width: 50%;
@@ -43,17 +47,22 @@ body #elixirs-list, body #elixir-details {
 body .elixir-item {
   cursor: pointer;
   padding: 8px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #acc2b6;
+  color: #466454;
 }
 body .elixir-item:hover {
   background-color: #e0ebe5;
 }
 body .elixir-details {
+  color: #466454;
   padding: 10px;
-  border: 1px solid #aaa;
+  border: 1px solid #acc2b6;
   background-color: #e0ebe5;
   position: sticky;
   top: 20px;
   min-height: 300px;
   overflow-y: auto;
+}
+body .selected {
+  background-color: #e0ebe5;
 }/*# sourceMappingURL=style.css.map */

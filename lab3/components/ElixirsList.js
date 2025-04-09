@@ -5,12 +5,19 @@ export function renderElixirsList(elixirs) {
   listContainer.innerHTML = '';
 
   elixirs.forEach(elixir => {
+    // create a new html to represent an elixir from api
     const newElixir = document.createElement('div');
     newElixir.textContent = `${elixir.name}`;
     newElixir.classList.add('elixir-item');
 
     newElixir.addEventListener('click', () => {
-      renderElixirDetails(elixir);
+        // switch item under selected class (for highlight)
+        document.querySelectorAll('.elixir-item.selected').forEach(el => {
+            el.classList.remove('selected');
+        });
+        newElixir.classList.add('selected');
+
+        renderElixirDetails(elixir);
     });
 
     listContainer.appendChild(newElixir);

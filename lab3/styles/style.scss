@@ -25,11 +25,15 @@ body {
 
             #search-bar input {
                 width: 100%;
+                border: solid 1px #739080;
+                color: #466454;
             }
             
             #difficulty-filter select {
-                height: 21px; 
+                height: 20px; 
                 width: 100%;
+                border: solid 1px #739080;
+                color: #466454;
             }
 
             #search-bar, #difficulty-filter{
@@ -51,7 +55,8 @@ body {
     .elixir-item {
         cursor: pointer;
         padding: 8px;
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid #acc2b6;
+        color: #466454;
     }
     
     .elixir-item:hover {
@@ -59,14 +64,19 @@ body {
     }
     
     .elixir-details {
+        color: #466454;
         padding: 10px;
-        border: 1px solid #aaa;
+        border: 1px solid #acc2b6;
         background-color: #e0ebe5;
         position: sticky; 
         top: 20px;       
         min-height: 300px;   
         overflow-y: auto; 
-    }    
+    }   
+    
+    .selected {
+        background-color: #e0ebe5;
+    }
 }
 
 
