@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     renderElixirsList(elixirs);
   } catch (error) {
     console.error("Error cannot load data: ", error);
+    showError(error.message);
   }
 });
 
@@ -41,3 +42,16 @@ function filterAndRender() {
 
   renderElixirsList(filtered);
 }
+
+function showError(message) {
+    const container = document.getElementById('elixirs-list');
+    container.innerHTML = '';
+
+    const errorBox = document.createElement('div');
+    errorBox.textContent = `${message}`;
+    errorBox.style.fontWeight = 'bold';
+    errorBox.style.fontSize = '60px';
+    
+    container.appendChild(errorBox);
+}
+  

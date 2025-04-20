@@ -1,4 +1,4 @@
-export function createSearchBar(onSearch) { // searching func as arg
+export function createSearchBar(onSearch) { // actions defined in app.js
     const inputBox = document.createElement('input');
     inputBox.type = 'text';
     inputBox.placeholder = 'Search elixirs...';

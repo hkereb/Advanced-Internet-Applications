@@ -4,11 +4,13 @@ export async function getElixirs() {
   try {
     const response = await fetch(API_URL);
     if (!response.ok) {
-        throw new Error("Error server response not OK: ${response.status}");
+        let errorText = `Server error ${response.status}`;
+        console.error(errorText);
+        throw new Error(errorText);
     } 
     return await response.json(); 
   } catch (error) {
-    console.error(error);
+    console.error("Fetch failed:", error.message);
     throw error;
   }
 }
