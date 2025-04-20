@@ -170,3 +170,20 @@ footer p {
 .options-menu li:hover {
   background-color: #f7efff;
 }
+
+.edit-form {
+  position: absolute;
+  top: 17px;
+  right: 22px;
+  background-color: white;
+  border: solid 1px #b9b9b9;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 10;
+  display: flex;
+  gap: 5px;
+}
+
+.edit-form input, button {
+  border: solid 1px #b9b9b9;
+}
