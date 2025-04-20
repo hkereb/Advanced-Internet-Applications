@@ -1,4 +1,6 @@
 export default function Entry(props) {
+    const stars = "⭐".repeat(props.entry.rating);
+
     return (
         <article className="collection-entry">
             <div className="main-image-container">
@@ -10,8 +12,8 @@ export default function Entry(props) {
             </div>
             <div className="info-container">
                 <h2 className="entry-name">{props.entry.name}</h2>
-                <p className="entry-rating">rating: {props.entry.rating}</p>
-                <p className="entry-size">size: {props.entry.size}cm</p>
+                <p className="entry-rating"><strong>Rating:</strong> {stars}</p>
+                <p className="entry-size"><strong>Size:</strong> {props.entry.size}cm</p>
                 <p className="entry-desc">{props.entry.description}</p>
             </div>
             <button className="delete-button" onClick={props.onDelete}>

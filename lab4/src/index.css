@@ -15,6 +15,7 @@ header {
   flex-direction: column;
   align-items: center;
   background: #f7efff;
+  box-shadow: 0 4px 3px rgba(152, 117, 187, 0.12);
 }
 
 .logo-and-title {
@@ -30,7 +31,7 @@ header {
   font-weight: 400;
   font-style: normal;
   color:rgb(166, 117, 187);
-  font-size: 50px;
+  font-size: 60px;
   margin-bottom: 15px;
 }
 
@@ -44,7 +45,7 @@ header {
 
 article.collection-entry {
   border: solid 1px #e4e4e4;
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 1px 8px rgba(152, 117, 187, 0.25);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -56,6 +57,7 @@ article.collection-entry {
   align-items: center;
   overflow: hidden; 
   position: relative;
+  color: rgb(131, 81, 152);
 }
 
 article.collection-entry .main-image-container {
@@ -64,7 +66,6 @@ article.collection-entry .main-image-container {
   overflow: hidden;
   border-radius: 5px;
   flex-shrink: 0;
-  margin-right: 19px;
 }
 
 article.collection-entry .main-image {
@@ -76,9 +77,15 @@ article.collection-entry .main-image {
 }
 
 article.collection-entry .info-container {
-  margin-block: 3px;
   font-size: 14px;
-  color: #2B283A;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+.entry-name {
+  text-align: center;    
+  display: flex;   
+  justify-content: center; 
 }
 
 .search-bar {
@@ -108,6 +115,7 @@ article.collection-entry .info-container {
   border: solid 1px #d4d4d4;
   box-shadow: 0 4px 3px rgba(0, 0, 0, 0.2);
   margin-top: 3px;
+  background-color: #f7efff;
 }
 
 .delete-button > img {
@@ -126,4 +134,21 @@ select {
 .search {
   display: flex;
   gap: 3px;
+}
+
+footer {
+  padding: 15px;
+  line-height: 0.5;
+  box-sizing: border-box;
+  margin-top: auto;
+  background: #f7efff;
+}
+
+footer p {
+  font-size: 20px;
+  color: rgb(131, 81, 152);
+  text-align: center;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
 }

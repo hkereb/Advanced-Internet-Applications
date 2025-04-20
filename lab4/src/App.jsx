@@ -1,5 +1,6 @@
 import Header from "./components/Header"
 import Entry from "./components/Entry"
+import Footer from "./components/Footer"
 import data from "./data.json"
 import { useState } from 'react'
 
@@ -59,6 +60,8 @@ export default function App() {
       <main className="container">
         {entryElements}
       </main>
+
+      <Footer />
     </>
   )
 }
