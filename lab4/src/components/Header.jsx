@@ -1,13 +1,18 @@
 import SearchBar from "./SearchBar"
 
-export default function Header() {
+export default function Header({ searchTerm, onSearchChange, sortOrder, onSortChange }) {
     return (
         <header>
             <div className="logo-and-title">
                 {/* <img src="images/rocks-logo.png" alt="rocks-icon" /> */}
-                <h1>my rock collection</h1>
+                <h1>rockollection</h1>
             </div>
-            <SearchBar />
+            <SearchBar 
+                searchTerm={searchTerm} 
+                onSearchChange={onSearchChange}
+                sortOrder={sortOrder}
+                onSortChange={onSortChange}
+            />
         </header>
     )
 }
