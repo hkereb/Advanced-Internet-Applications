@@ -1,12 +1,14 @@
 import Header from "./components/Header"
+import Entry from "./components/Entry"
 import data from "./data.json"
+import React from "react"
 
 export default function App() {
 
   const entryElements = data.map((entry) => {
     return (
         <Entry
-            key={entry.id}
+            key={entry.key}
             entry={entry}
         />
     )
@@ -14,10 +16,10 @@ export default function App() {
 
   return (
       <>
-          <Header />
-          <main className="container">
-              {entryElements}
-          </main>
+        <Header />
+        <main className="container">
+            {entryElements}
+        </main>
       </>
   )
 }

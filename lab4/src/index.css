@@ -3,8 +3,7 @@
 }
 
 html, body {
-  margin: 0px 20px 0px 20px;
-
+  margin: 0;
 }
 
 body {
@@ -13,18 +12,85 @@ body {
 
 header {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  background: #f7efff;
 }
 
-header > img {
+.logo-and-title {
+  display: flex;
+}
+
+.logo-and-title > img {
   width: 70px;
-  margin-right: 7px;
 }
 
-header > h1 {
-  font-family: "Special Elite", system-ui;
+.logo-and-title > h1 {
+  font-family: "Rubik Dirt", system-ui;
   font-weight: 400;
   font-style: normal;
-  font-size: 35px;
-  color:rgb(97, 97, 103);
+  color:rgb(146, 155, 157);
+}
+
+.container {
+  margin: 45px 40px;
+  display: flex;
+  flex-wrap: wrap;   
+  gap: 30px;
+  justify-content: center;              
+}
+
+article.collection-entry {
+  border: solid 1px #000000;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 13px;
+  padding-bottom: 20px;
+  width: 250px;    
+  height: 350px;        
+  box-sizing: border-box;
+  align-items: center;
+  overflow: hidden; 
+}
+
+article.collection-entry .main-image-container {
+  width: 168px;
+  height: 168px;
+  overflow: hidden;
+  border-radius: 5px;
+  flex-shrink: 0;
+  margin-right: 19px;
+}
+
+article.collection-entry .main-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  align-self: center;
+  border-radius: 5px;
+}
+
+article.collection-entry .info-container {
+  margin-block: 3px;
+  font-size: 14px;
+  color: #2B283A;
+}
+
+.search-bar {
+  margin: 10px 0px 20px 0px;
+  display: flex;
+  gap: 10px;
+}
+
+.search-bar > input {
+  border-radius: 5px;
+  border: solid 1px #4f4f4f;
+  width: 200px;
+}
+
+.search-bar > button {
+  border-radius: 5px;
+  border: solid 1px #4f4f4f;
 }

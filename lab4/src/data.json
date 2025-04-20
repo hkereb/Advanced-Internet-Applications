@@ -1,153 +1,168 @@
 [
     {
       "key": 1,
-      "nazwa": "Ametyst",
-      "wielkość": 4.5,
+      "name": "Amethyst",
+      "size": 4.5,
       "rating": 4,
-      "kolor": "fioletowy",
-      "kategoria": "krzemian",
-      "pochodzenie": "Brazylia",
-      "img": "images/ametyst.png"
+      "description": "A purple quartz known for its calming properties.",
+      "img": {
+        "src": "images/amethyst.jpg",
+        "alt": "Amethyst"
+      }
     },
     {
       "key": 2,
-      "nazwa": "Kwarc różowy",
-      "wielkość": 3.2,
+      "name": "Rose Quartz",
+      "size": 3.2,
       "rating": 3,
-      "kolor": "różowy",
-      "kategoria": "krzemian",
-      "pochodzenie": "Madagaskar",
-      "img": "images/kwarc_rozowy.png"
+      "description": "A pink stone symbolizing love and harmony.",
+      "img": {
+        "src": "images/rose_quartz.jpg",
+        "alt": "Rose Quartz"
+      }
     },
     {
       "key": 3,
-      "nazwa": "Piryt",
-      "wielkość": 2.8,
+      "name": "Pyrite",
+      "size": 2.8,
       "rating": 4,
-      "kolor": "złoty",
-      "kategoria": "siarczek",
-      "pochodzenie": "Peru",
-      "img": "images/piryt.png"
+      "description": "A golden mineral often called fool’s gold.",
+      "img": {
+        "src": "images/pyrite.jpg",
+        "alt": "Pyrite"
+      }
     },
     {
       "key": 4,
-      "nazwa": "Malachit",
-      "wielkość": 5.1,
+      "name": "Malachite",
+      "size": 5.1,
       "rating": 2,
-      "kolor": "zielony",
-      "kategoria": "węglan",
-      "pochodzenie": "Demokratyczna Republika Konga",
-      "img": "images/malachit.png"
+      "description": "A green stone with unique banded patterns.",
+      "img": {
+        "src": "images/malachite.jpg",
+        "alt": "Malachite"
+      }
     },
     {
       "key": 5,
-      "nazwa": "Turkus",
-      "wielkość": 3.0,
+      "name": "Turquoise",
+      "size": 3.0,
       "rating": 5,
-      "kolor": "turkusowy",
-      "kategoria": "fosforan",
-      "pochodzenie": "Iran",
-      "img": "images/turkus.png"
+      "description": "A blue-green protective gemstone.",
+      "img": {
+        "src": "images/turquoise.jpg",
+        "alt": "Turquoise"
+      }
     },
     {
       "key": 6,
-      "nazwa": "Lapis lazuli",
-      "wielkość": 4.2,
+      "name": "Lapis Lazuli",
+      "size": 4.2,
       "rating": 1,
-      "kolor": "granatowy",
-      "kategoria": "skała metamorficzna",
-      "pochodzenie": "Afganistan",
-      "img": "images/lapis_lazuli.png"
+      "description": "A deep blue stone with flecks of pyrite.",
+      "img": {
+        "src": "images/lapis_lazuli.jpeg",
+        "alt": "Lapis Lazuli"
+      }
     },
     {
       "key": 7,
-      "nazwa": "Obsydian",
-      "wielkość": 6.3,
+      "name": "Obsidian",
+      "size": 6.3,
       "rating": 2,
-      "kolor": "czarny",
-      "kategoria": "skała wulkaniczna",
-      "pochodzenie": "USA",
-      "img": "images/obsydian.png"
+      "description": "A glossy black volcanic glass.",
+      "img": {
+        "src": "images/obsidian.jpg",
+        "alt": "Obsidian"
+      }
     },
     {
       "key": 8,
-      "nazwa": "Fluoryt",
-      "wielkość": 3.5,
+      "name": "Fluorite",
+      "size": 3.5,
       "rating": 1,
-      "kolor": "zielono-fioletowy",
-      "kategoria": "halogenek",
-      "pochodzenie": "Chiny",
-      "img": "images/fluoryt.png"
+      "description": "A colorful mineral often used in education.",
+      "img": {
+        "src": "images/fluorite.jpg",
+        "alt": "Fluorite"
+      }
     },
     {
       "key": 9,
-      "nazwa": "Hematyt",
-      "wielkość": 2.4,
+      "name": "Hematite",
+      "size": 2.4,
       "rating": 4,
-      "kolor": "srebrno-szary",
-      "kategoria": "tlenek",
-      "pochodzenie": "Brazylia",
-      "img": "images/hematyt.png"
+      "description": "A silvery stone known for grounding energy.",
+      "img": {
+        "src": "images/hematite.jpg",
+        "alt": "Hematite"
+      }
     },
     {
       "key": 10,
-      "nazwa": "Howlit",
-      "wielkość": 3.3,
+      "name": "Howlite",
+      "size": 3.3,
       "rating": 5,
-      "kolor": "biały z żyłkami",
-      "kategoria": "boran",
-      "pochodzenie": "Kanada",
-      "img": "images/howlit.png"
+      "description": "A white stone with gray veins that promotes calm.",
+      "img": {
+        "src": "images/howlite.jpg",
+        "alt": "Howlite"
+      }
     },
     {
       "key": 11,
-      "nazwa": "Opal",
-      "wielkość": 2.9,
+      "name": "Opal",
+      "size": 2.9,
       "rating": 3,
-      "kolor": "irydyzujący",
-      "kategoria": "krzemian",
-      "pochodzenie": "Australia",
-      "img": "images/opal.png"
+      "description": "An iridescent gemstone with shifting colors.",
+      "img": {
+        "src": "images/opal.jpg",
+        "alt": "Opal"
+      }
     },
     {
       "key": 12,
-      "nazwa": "Tygrysie oko",
-      "wielkość": 4.0,
+      "name": "Tiger's Eye",
+      "size": 4.0,
       "rating": 2,
-      "kolor": "złoto-brązowy",
-      "kategoria": "krzemian",
-      "pochodzenie": "Republika Południowej Afryki",
-      "img": "images/tygrysie_oko.png"
+      "description": "A golden-brown stone with a cat-eye sheen.",
+      "img": {
+        "src": "images/tigers_eye.jpg",
+        "alt": "Tiger's Eye"
+      }
     },
     {
       "key": 13,
-      "nazwa": "Celestyn",
-      "wielkość": 5.7,
+      "name": "Celestine",
+      "size": 5.7,
       "rating": 2,
-      "kolor": "błękitny",
-      "kategoria": "siarczan",
-      "pochodzenie": "Madagaskar",
-      "img": "images/celestyn.png"
+      "description": "A pale blue crystal associated with peace.",
+      "img": {
+        "src": "images/celestine.jpg",
+        "alt": "Celestine"
+      }
     },
     {
       "key": 14,
-      "nazwa": "Karneol",
-      "wielkość": 3.1,
+      "name": "Carnelian",
+      "size": 3.1,
       "rating": 3,
-      "kolor": "czerwono-pomarańczowy",
-      "kategoria": "krzemian",
-      "pochodzenie": "Indie",
-      "img": "images/karneol.png"
+      "description": "A red-orange stone that boosts energy.",
+      "img": {
+        "src": "images/carnelian.jpg",
+        "alt": "Carnelian"
+      }
     },
     {
       "key": 15,
-      "nazwa": "Amazonit",
-      "wielkość": 4.6,
+      "name": "Amazonite",
+      "size": 4.6,
       "rating": 1,
-      "kolor": "zielono-niebieski",
-      "kategoria": "krzemian",
-      "pochodzenie": "Rosja",
-      "img": "images/amazonit.png"
+      "description": "A greenish-blue stone that aids communication.",
+      "img": {
+        "src": "images/amazonite.jpg",
+        "alt": "Amazonite"
+      }
     }
   ]
   

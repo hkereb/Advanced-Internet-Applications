@@ -9,11 +9,10 @@ export default function Entry(props) {
                 />
             </div>
             <div className="info-container">
-                <span className="country">{props.entry.country}</span>
-                <a href={props.entry.googleMapsLink} target="_blank">View on Google Maps</a>
-                <h2 className="entry-title">{props.entry.title}</h2>
-                <p className="trip-dates">{props.entry.dates}</p>
-                <p className="entry-text">{props.entry.text}</p>
+                <h2 className="entry-name">{props.entry.name}</h2>
+                <p className="entry-rating">rating: {props.entry.rating}</p>
+                <p className="entry-size">size: {props.entry.size}cm</p>
+                <p className="entry-desc">{props.entry.description}</p>
             </div>
             
         </article>
