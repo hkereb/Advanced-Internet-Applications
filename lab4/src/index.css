@@ -102,7 +102,7 @@ article.collection-entry .info-container {
   margin-bottom: 15px;
 }
 
-.delete-button {
+.options-button {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -112,14 +112,11 @@ article.collection-entry .info-container {
   cursor: pointer;
   font-size: 20px;
   font-weight: bold;
-  border: solid 1px #d4d4d4;
-  box-shadow: 0 4px 3px rgba(0, 0, 0, 0.2);
   margin-top: 3px;
-  background-color: #f7efff;
 }
 
-.delete-button > img {
-  height: 13px;
+.options-button > img {
+  height: 16px;
   width: auto;
   padding: 0;
 }
@@ -151,4 +148,25 @@ footer p {
   font-size: 14px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
+}
+
+.options-menu {
+  position: absolute;
+  top:17px;
+  right: 22px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  border: solid 1px #b9b9b9;
+  list-style: none;
+  padding: 5px 8px 5px 8px; 
+  width: 60px;
+}
+
+.options-menu li {
+  padding: 0px;
+  cursor: pointer;
+}
+
+.options-menu li:hover {
+  background-color: #f7efff;
 }

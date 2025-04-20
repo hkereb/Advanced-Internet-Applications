@@ -1,9 +1,11 @@
+import EntryOptions from "./EntryOptions";
+
 export default function Entry(props) {
     const stars = "⭐".repeat(props.entry.rating);
 
     return (
         <article className="collection-entry">
-            <div className="main-image-container">
+            <div className= "main-image-container">
                 <img 
                     className="main-image"
                     src={props.entry.img.src}
@@ -16,9 +18,7 @@ export default function Entry(props) {
                 <p className="entry-size"><strong>Size:</strong> {props.entry.size}cm</p>
                 <p className="entry-desc">{props.entry.description}</p>
             </div>
-            <button className="delete-button" onClick={props.onDelete}>
-              <img src="images/trash.png" alt="trash-icon" />
-            </button>
+            <EntryOptions onDelete={props.onDelete} />
         </article>
     )
 }
