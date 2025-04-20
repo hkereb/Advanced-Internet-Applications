@@ -14,7 +14,9 @@ export default function Entry(props) {
                 <p className="entry-size">size: {props.entry.size}cm</p>
                 <p className="entry-desc">{props.entry.description}</p>
             </div>
-            
+            <button className="delete-button" onClick={props.onDelete}>
+              <img src="images/trash.png" alt="trash-icon" />
+            </button>
         </article>
     )
 }
