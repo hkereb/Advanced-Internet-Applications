@@ -2,8 +2,8 @@ import { useState } from "react";
 import EntryOptions from "./EntryOptions";
 
 export default function Entry(props) {
-  const [rating, setRating] = useState(props.entry.rating);
-  const stars = "⭐".repeat(rating);
+
+  const stars = "⭐".repeat(props.entry.rating);
 
   return (
     <article className="collection-entry">
@@ -22,8 +22,8 @@ export default function Entry(props) {
       </div>
       <EntryOptions
         onDelete={props.onDelete}
-        onEdit={setRating}
-        currentRating={rating}
+        onRatingChange={(newRating) => props.onRatingChange(props.entry.key, newRating)}
+        currentRating={props.entry.rating}
       />
     </article>
   );

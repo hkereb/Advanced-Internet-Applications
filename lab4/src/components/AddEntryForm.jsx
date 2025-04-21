@@ -82,7 +82,7 @@ export default function AddEntryForm({ onAdd, existingEntries }) {
             onChange={handleChange}
             rows="3"
           />
-          <button type="submit">Add Entry</button>
+          <button type="submit">Add</button>
         </form>
       )}
     </div>

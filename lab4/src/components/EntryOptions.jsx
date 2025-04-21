@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 
-export default function EntryOptions({ onDelete, onEdit, currentRating }) {
+export default function EntryOptions({ onDelete, onRatingChange, currentRating }) {
   const [showMenu, setShowMenu] = useState(false);
   const [editing, setEditing] = useState(false);
   const [newRating, setNewRating] = useState(currentRating);
@@ -21,7 +21,7 @@ export default function EntryOptions({ onDelete, onEdit, currentRating }) {
   }, []);
 
   const handleEditSubmit = () => {
-    onEdit(newRating);
+    onRatingChange(newRating);
     setEditing(false);
     setShowMenu(false);
   };

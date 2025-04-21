@@ -26,7 +26,7 @@
       "name": "Pyrite",
       "size": 2.8,
       "rating": 4,
-      "description": "A golden mineral often called fool’s gold.",
+      "description": "Pyrite, often referred to as 'fool's gold,' is a metallic mineral known for its striking resemblance to gold, due to its brassy yellow color and metallic luster. This iron sulfide mineral is commonly found in sedimentary, metamorphic, and igneous rocks, and forms in cubic or pyritohedral crystals. Despite its appearance, pyrite is not a true precious metal, but rather a common mineral that has long been mined for its iron content and occasionally for sulfur.",
       "img": {
         "src": "images/pyrite.jpg",
         "alt": "Pyrite"
@@ -37,7 +37,7 @@
       "name": "Malachite",
       "size": 5.1,
       "rating": 2,
-      "description": "A green stone with unique banded patterns.",
+      "description": "A striking green stone known for its distinctive banded patterns.",
       "img": {
         "src": "images/malachite.jpg",
         "alt": "Malachite"
@@ -48,7 +48,7 @@
       "name": "Turquoise",
       "size": 3.0,
       "rating": 5,
-      "description": "A blue-green protective gemstone.",
+      "description": "Turquoise is a beautiful blue-green gemstone that has been cherished for thousands of years. Known for its striking color, it is often considered a protective stone, believed by many cultures to offer physical, emotional, and spiritual healing. The stone's vibrant hues range from a soft blue to a rich green, with variations influenced by the mineral's copper and iron content. Historically, turquoise has been highly valued by ancient civilizations, such as the Egyptians, Persians, and Native American tribes, who used it in jewelry, talismans, and ceremonial objects. It is also thought to bring good fortune, promote positive energy, and offer protection from harm.",
       "img": {
         "src": "images/turquoise.jpg",
         "alt": "Turquoise"

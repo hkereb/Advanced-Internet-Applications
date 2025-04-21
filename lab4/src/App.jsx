@@ -28,7 +28,16 @@ export default function App() {
 
   function handleAddEntry(newEntry) {
     setEntries(prev => [...prev, newEntry]);
+    setSearchTerm('');
   }
+
+  function handleRatingChange(id, newRating) {
+    setEntries(prevEntries =>
+      prevEntries.map(entry =>
+        entry.key === id ? { ...entry, rating: newRating } : entry
+      )
+    );
+  }  
 
   const filteredEntries = entries
   .filter(entry => 
@@ -47,6 +56,7 @@ export default function App() {
         key={entry.key}
         entry={entry}
         onDelete={() => handleDelete(entry.key)}
+        onRatingChange={handleRatingChange}
       />
     )
   });
