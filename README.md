@@ -30,3 +30,11 @@
 <p align="center">
   <img src="https://github.com/user-attachments/assets/380a2a14-ce65-4e7d-83c3-dcc49d30811f" alt="Screenshot 5" width="600">
 </p>
+
+## lab4 - React 
+<div align="center" style="font-weight: bold;">Rock Collection (JS, React, HTML, CSS)</div>  
+<br>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/73363c68-cce9-4367-8c39-88355593902d" alt="Screenshot 5" width="600">
+</p>
