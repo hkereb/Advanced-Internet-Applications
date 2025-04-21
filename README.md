@@ -36,5 +36,5 @@
 <br>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/73363c68-cce9-4367-8c39-88355593902d" alt="Screenshot 5" width="600">
+  <img src="https://github.com/user-attachments/assets/a697b018-c497-46d1-a763-3ee8345ca272" alt="Screenshot 5" width="600">
 </p>
