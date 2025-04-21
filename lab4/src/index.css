@@ -4,10 +4,21 @@
 
 html, body {
   margin: 0;
+  height: 100%;
 }
 
 body {
-  font-family: Inter;
+  font-family: "Roboto", sans-serif;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }
 
 header {
@@ -23,7 +34,9 @@ header {
 }
 
 .logo-and-title > img {
-  width: 70px;
+  width: 40px;
+  height: 40px;
+  margin-top: 56px;
 }
 
 .logo-and-title > h1 {
@@ -95,11 +108,16 @@ article.collection-entry .info-container {
 }
 
 .search-bar > input {
-  border-radius: 5px;
-  border: solid 1px #b9b9b9;
+  border-radius: 10px;
+  border: solid 2px #9b80ad89;
   width: 250px;
   height: 25px;
   margin-bottom: 15px;
+}
+
+.search-bar > input:focus {
+  border: solid 2px #9b80ad89;
+  outline: none;
 }
 
 .options-button {
@@ -124,8 +142,20 @@ article.collection-entry .info-container {
 select {
   width: 120px;
   height: 25px;
-  border: solid 1px #b9b9b9;
-  border-radius: 5px;
+  border: solid 2px #9b80ad89;
+  border-radius: 10px;
+}
+
+select:focus {
+  outline: none;
+}
+
+.sort-container option {
+  color: #653f78;
+}
+
+.sort-container select {
+  color: #653f78;
 }
 
 .search {
@@ -133,12 +163,20 @@ select {
   gap: 3px;
 }
 
+.search-input {
+  color: #653f78;
+}
+
+.search-input::placeholder {
+  color: #653f78;
+}
+
 footer {
   padding: 15px;
   line-height: 0.5;
-  box-sizing: border-box;
   margin-top: auto;
   background: #f7efff;
+  box-sizing: border-box;
 }
 
 footer p {
@@ -155,11 +193,12 @@ footer p {
   top:17px;
   right: 22px;
   background-color: rgb(255, 255, 255);
-  border-radius: 5px;
-  border: solid 1px #b9b9b9;
+  border-radius: 10px;
+  border: solid 1px #9b80ad89;
   list-style: none;
   padding: 5px 8px 5px 8px; 
   width: 60px;
+  box-shadow: 0 4px 3px rgba(152, 117, 187, 0.12);
 }
 
 .options-menu li {
@@ -173,11 +212,11 @@ footer p {
 
 .edit-form {
   position: absolute;
-  top: 17px;
+  top: 32px;
   right: 22px;
   background-color: white;
-  border: solid 1px #b9b9b9;
-  border-radius: 5px;
+  border: solid 1px #9b80ad89;
+  border-radius: 10px;
   padding: 10px;
   z-index: 10;
   display: flex;
@@ -185,5 +224,89 @@ footer p {
 }
 
 .edit-form input, button {
-  border: solid 1px #b9b9b9;
+  border: solid 1px #9b80ad89;
+  border-radius: 5px;
+  color: #653f78;
+}
+
+.edit-form button {
+  background-color: #f7efff;
+}
+
+.new-entry-content {
+  border: solid 1px #e4e4e4;
+  box-shadow: 1px 1px 8px rgba(152, 117, 187, 0.25);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 13px;
+  padding-bottom: 20px;
+  width: 250px;    
+  height: 350px;        
+  box-sizing: border-box;
+  align-items: center;
+  overflow: hidden; 
+  position: relative;
+  color: rgb(131, 81, 152);
+}
+
+.plus-image {
+  border-radius: 10px;
+  display: flex;
+  padding: 13px;
+  padding-bottom: 20px;
+  width: 250px;    
+  height: 350px;        
+  box-sizing: border-box;
+  justify-content: center;   
+  align-items: center;   
+  overflow: hidden; 
+}
+
+.plus-image > img {
+  width: 100px;
+  box-shadow: 0 5px 4px rgba(152, 117, 187, 0.209);
+  border-radius: 30px;
+}
+
+.new-entry-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
+.new-entry-content > input, textarea {
+  width: 80%;
+  border: solid 1px #9b80ad93;
+  border-radius: 5px;
+  color: #653f78;
+}
+
+.new-entry-content > input {
+  height: 25px;
+}
+
+.new-entry-content > textarea {
+  max-height: 100px;     
+  overflow-y: auto;     
+  resize: none;  
+}
+
+.new-entry-content > input:focus, textarea:focus {
+  outline: none;
+  color: #653f78;
+}
+
+.new-entry-content > input::placeholder, textarea::placeholder {
+  outline: none;
+  color: #653f786f;
+}
+
+.new-entry-content > button {
+  border-radius: 10px;
+  border: solid 1px #9b80ad89;
+  border-radius: 5px;
+  color: #653f78;
+  background-color: #f7efff;
 }

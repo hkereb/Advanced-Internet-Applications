@@ -1,6 +1,7 @@
 import Header from "./components/Header"
 import Entry from "./components/Entry"
 import Footer from "./components/Footer"
+import AddEntryForm from "./components/AddEntryForm";
 import data from "./data.json"
 import { useState } from 'react'
 
@@ -25,6 +26,10 @@ export default function App() {
     setSortOrder(order);
   }  
 
+  function handleAddEntry(newEntry) {
+    setEntries(prev => [...prev, newEntry]);
+  }
+
   const filteredEntries = entries
   .filter(entry => 
     entry.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
@@ -35,9 +40,7 @@ export default function App() {
     if (sortOrder === 'desc') return b.rating - a.rating;
     return 0; 
   });
-
   
-
   const entryElements = filteredEntries.map((entry) => {
     return (
       <Entry
@@ -48,8 +51,16 @@ export default function App() {
     )
   });
 
+  entryElements.push(
+    <AddEntryForm
+      key="add-form"
+      onAdd={handleAddEntry}
+      existingEntries={entries}
+    />
+  );
+
   return (
-    <>
+    <div className="app-wrapper">
       <Header 
         searchTerm={searchTerm} 
         onSearchChange={handleSearchChange} 
@@ -62,6 +73,6 @@ export default function App() {
       </main>
 
       <Footer />
-    </>
+    </div>
   )
 }

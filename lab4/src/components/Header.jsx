@@ -4,7 +4,7 @@ export default function Header({ searchTerm, onSearchChange, sortOrder, onSortCh
     return (
         <header>
             <div className="logo-and-title">
-                {/* <img src="images/rocks-logo.png" alt="rocks-icon" /> */}
+                {/* <img src="images/rock-geo-logo.png" alt="rocks-icon" /> */}
                 <h1>rockollection</h1>
             </div>
             <SearchBar 
