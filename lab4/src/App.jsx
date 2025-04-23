@@ -11,27 +11,26 @@ export default function App() {
   const [searchTerm, setSearchTerm] = useState('')
   const [sortOrder, setSortOrder] = useState('');
 
-  function handleDelete(id) {
-    const confirmed = window.confirm("Are you sure you want to delete this element?");
-    if (confirmed) {
-      setEntries(prev => prev.filter(entry => entry.key !== id));
-    }
-  }
-
-  function handleSearchChange(event) {
+  function onSearchTermChange(event) {
     setSearchTerm(event.target.value);
   }
 
-  function handleSortChange(order) {
+  function onSortOrderChange(order) {
     setSortOrder(order);
   }  
 
-  function handleAddEntry(newEntry) {
+  function onEntryAdd(newEntry) {
     setEntries(prev => [...prev, newEntry]);
     setSearchTerm('');
   }
 
-  function handleRatingChange(id, newRating) {
+  function onEntryDelete(id) {
+    if (window.confirm("Are you sure you want to delete this element?")) {
+      setEntries(prev => prev.filter(entry => entry.key !== id));
+    }
+  }
+
+  function onEntryEdit(id, newRating) {
     setEntries(prevEntries =>
       prevEntries.map(entry =>
         entry.key === id ? { ...entry, rating: newRating } : entry
@@ -39,12 +38,12 @@ export default function App() {
     );
   }  
 
-  const filteredEntries = entries
-  .filter(entry => 
+  const filteredEntries = entries.filter(entry => 
     entry.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
     entry.description.toLowerCase().includes(searchTerm.toLowerCase())
   )
-  .sort((a, b) => {
+
+  filteredEntries.sort((a, b) => {
     if (sortOrder === 'asc') return a.rating - b.rating;
     if (sortOrder === 'desc') return b.rating - a.rating;
     return 0; 
@@ -55,34 +54,33 @@ export default function App() {
       <Entry
         key={entry.key}
         entry={entry}
-        onDelete={() => handleDelete(entry.key)}
-        onRatingChange={handleRatingChange}
+        onDelete={() => onEntryDelete(entry.key)}
+        onRatingChange={onEntryEdit}
       />
     )
   });
 
-  entryElements.push(
-    <AddEntryForm
-      key="add-form"
-      onAdd={handleAddEntry}
-      existingEntries={entries}
-    />
-  );
-
   return (
     <div className="app-wrapper">
+
       <Header 
         searchTerm={searchTerm} 
-        onSearchChange={handleSearchChange} 
+        onSearchChange={onSearchTermChange} 
         sortOrder={sortOrder}
-        onSortChange={handleSortChange}
+        onSortChange={onSortOrderChange}
       />
 
       <main className="container">
         {entryElements}
+        <AddEntryForm
+          key="add-form"
+          onAdd={onEntryAdd}
+          existingEntries={entries}
+        />
       </main>
 
       <Footer />
+
     </div>
   )
 }

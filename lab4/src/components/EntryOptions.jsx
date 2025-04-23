@@ -1,27 +1,29 @@
 import { useState, useRef, useEffect } from "react";
 
 export default function EntryOptions({ onDelete, onRatingChange, currentRating }) {
+
   const [showMenu, setShowMenu] = useState(false);
   const [editing, setEditing] = useState(false);
-  const [newRating, setNewRating] = useState(currentRating);
-  const menuRef = useRef(null);
+  const [rating, setRating] = useState(currentRating);
+  const menuRef = useRef(null); // to detect outside clicks
 
-  const handleClickOutside = (event) => {
+  const onClickOutsideMenu = (event) => {
     if (menuRef.current && !menuRef.current.contains(event.target)) {
       setShowMenu(false);
       setEditing(false);
     }
   };
 
+  // mousedown reacts right away, click reacts after releasing
   useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousedown", onClickOutsideMenu);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("mousedown", onClickOutsideMenu);
     };
   }, []);
 
-  const handleEditSubmit = () => {
-    onRatingChange(newRating);
+  const onSaveEditForm = () => {
+    onRatingChange(rating);
     setEditing(false);
     setShowMenu(false);
   };
@@ -32,28 +34,28 @@ export default function EntryOptions({ onDelete, onRatingChange, currentRating }
         <img src="images/dots_purple.png" alt="dots-icon" />
       </button>
 
+      {/* show menu options */}
       {showMenu && !editing && (
         <ul className="options-menu">
           <li onClick={() => setEditing(true)}>edit</li>
           <li onClick={() => {
             onDelete();
             setShowMenu(false);
-          }}>
-            delete
-          </li>
+          }}>delete</li>
         </ul>
       )}
 
+      {/* show editing options */}
       {showMenu && editing && (
         <div className="edit-form">
           <input
             type="number"
             min="1"
             max="5"
-            value={newRating}
-            onChange={(e) => setNewRating(Number(e.target.value))}
+            value={rating}
+            onChange={(e) => setRating(Number(e.target.value))}
           />
-          <button onClick={handleEditSubmit}>Save</button>
+          <button onClick={onSaveEditForm}>Save</button>
         </div>
       )}
     </div>

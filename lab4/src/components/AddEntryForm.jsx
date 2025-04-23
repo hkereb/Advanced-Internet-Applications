@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function AddEntryForm({ onAdd, existingEntries }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isFormVisible, setIsFormVisible] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     rating: "",
@@ -9,11 +9,11 @@ export default function AddEntryForm({ onAdd, existingEntries }) {
     description: "",
   });
 
-  function handleToggle() {
-    setIsOpen(prev => !prev);
+  function onAddButtonClick() {
+    setIsFormVisible(prev => !prev);
   }
 
-  function handleChange(e) {
+  function onNewDataInForm(e) {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -21,10 +21,9 @@ export default function AddEntryForm({ onAdd, existingEntries }) {
     }));
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-
+  function onSaveForm() {
     const maxKey = Math.max(...existingEntries.map(entry => entry.key));
+    
     const newEntry = {
       key: maxKey + 1,
       name: formData.name,
@@ -39,23 +38,23 @@ export default function AddEntryForm({ onAdd, existingEntries }) {
 
     onAdd(newEntry);
     setFormData({ name: "", rating: "", size: "", description: "" });
-    setIsOpen(false);
+    setIsFormVisible(false);
   }
 
   return (
-    <div className="entry-card add-entry" onClick={handleToggle}>
-      {!isOpen ? (
+    <div className="entry-card add-entry" onClick={onAddButtonClick}>
+      {!isFormVisible ? (
         <div className="plus-image">
             <img src="images/plus_darker.png" alt="plus-icon" />
         </div>
       ) : (
-        <form className="new-entry-content" onClick={(e) => e.stopPropagation()} onSubmit={handleSubmit}>
+        <form className="new-entry-content" onClick={(e) => e.stopPropagation()} onSubmit={onSaveForm}>
           <input
             type="text"
             name="name"
             placeholder="name"
             value={formData.name}
-            onChange={handleChange}
+            onChange={onNewDataInForm}
             required
           />
           <input
@@ -65,7 +64,7 @@ export default function AddEntryForm({ onAdd, existingEntries }) {
             min="1"
             max="5"
             value={formData.rating}
-            onChange={handleChange}
+            onChange={onNewDataInForm}
             required
           />
           <input
@@ -73,13 +72,13 @@ export default function AddEntryForm({ onAdd, existingEntries }) {
             name="size"
             placeholder="size"
             value={formData.size}
-            onChange={handleChange}
+            onChange={onNewDataInForm}
           />
           <textarea
             name="description"
             placeholder="description"
             value={formData.description}
-            onChange={handleChange}
+            onChange={onNewDataInForm}
             rows="3"
           />
           <button type="submit">Add</button>

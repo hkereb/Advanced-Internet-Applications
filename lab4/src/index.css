@@ -214,13 +214,13 @@ footer p {
 
 .options-menu {
   position: absolute;
-  top:17px;
-  right: 22px;
+  top:12px;
+  right: 26px;
   background-color: rgb(255, 255, 255);
-  border-radius: 10px;
+  border-radius: 7px;
   border: solid 1px #9b80ad89;
   list-style: none;
-  padding: 5px 8px 5px 8px; 
+  padding: 2px; 
   width: 60px;
   box-shadow: 0 4px 3px rgba(152, 117, 187, 0.12);
 }
@@ -236,11 +236,11 @@ footer p {
 
 .edit-form {
   position: absolute;
-  top: 32px;
-  right: 22px;
+  top: 28px;
+  right: 26px;
   background-color: white;
   border: solid 1px #9b80ad89;
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 10px;
   z-index: 10;
   display: flex;

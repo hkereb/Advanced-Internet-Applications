@@ -1,4 +1,3 @@
-import { useState } from "react";
 import EntryOptions from "./EntryOptions";
 
 export default function Entry(props) {
