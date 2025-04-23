@@ -16,11 +16,13 @@ export default function EntryOptions({ onDelete, onRatingChange, currentRating }
 
   // mousedown reacts right away, click reacts after releasing
   useEffect(() => {
+    if (!showMenu) return;
+  
     document.addEventListener("mousedown", onClickOutsideMenu);
     return () => {
       document.removeEventListener("mousedown", onClickOutsideMenu);
     };
-  }, []);
+  }, [showMenu]);
 
   const onSaveEditForm = () => {
     onRatingChange(rating);

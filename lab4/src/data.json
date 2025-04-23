@@ -6,7 +6,7 @@
       "rating": 4,
       "description": "A purple quartz known for its calming properties.",
       "img": {
-        "src": "images/amethyst.jpg",
+        "src": "https://crystalmagic.com/cdn/shop/files/amethystpoint6-3_1024x.jpg?v=1714600377",
         "alt": "Amethyst"
       }
     },
@@ -17,7 +17,7 @@
       "rating": 3,
       "description": "A pink stone symbolizing love and harmony.",
       "img": {
-        "src": "images/rose_quartz.jpg",
+        "src": "https://i.etsystatic.com/9859922/r/il/0d86cf/1188522552/il_fullxfull.1188522552_kh5j.jpg",
         "alt": "Rose Quartz"
       }
     },
@@ -28,7 +28,7 @@
       "rating": 4,
       "description": "Pyrite, often referred to as 'fool's gold,' is a metallic mineral known for its striking resemblance to gold, due to its brassy yellow color and metallic luster. This iron sulfide mineral is commonly found in sedimentary, metamorphic, and igneous rocks, and forms in cubic or pyritohedral crystals. Despite its appearance, pyrite is not a true precious metal, but rather a common mineral that has long been mined for its iron content and occasionally for sulfur.",
       "img": {
-        "src": "images/pyrite.jpg",
+        "src": "https://www.mineralmike.com/cdn/shop/products/pyrite-cube-3_600x.jpg?v=1715220942",
         "alt": "Pyrite"
       }
     },
@@ -39,7 +39,7 @@
       "rating": 2,
       "description": "A striking green stone known for its distinctive banded patterns.",
       "img": {
-        "src": "images/malachite.jpg",
+        "src": "https://images.squarespace-cdn.com/content/v1/60bcfa28fbad083dee29c7a7/1674837930879-8M6C1PYDV000ZH7OXQJT/IMG_6192.JPG?format=1000w",
         "alt": "Malachite"
       }
     },
@@ -50,7 +50,7 @@
       "rating": 5,
       "description": "Turquoise is a beautiful blue-green gemstone that has been cherished for thousands of years. Known for its striking color, it is often considered a protective stone, believed by many cultures to offer physical, emotional, and spiritual healing. The stone's vibrant hues range from a soft blue to a rich green, with variations influenced by the mineral's copper and iron content. Historically, turquoise has been highly valued by ancient civilizations, such as the Egyptians, Persians, and Native American tribes, who used it in jewelry, talismans, and ceremonial objects. It is also thought to bring good fortune, promote positive energy, and offer protection from harm.",
       "img": {
-        "src": "images/turquoise.jpg",
+        "src": "https://travelnevada.com/wp-content/uploads/2023/07/GeoBeckly-Otteson-Turquoise-1024x576.png",
         "alt": "Turquoise"
       }
     },
@@ -61,7 +61,7 @@
       "rating": 1,
       "description": "A deep blue stone with flecks of pyrite.",
       "img": {
-        "src": "images/lapis_lazuli.jpeg",
+        "src": "https://lemuriacrystalshop.com/cdn/shop/products/image_d426bcee-9872-428c-99d3-21000df4d3f7.jpg?v=1640141655",
         "alt": "Lapis Lazuli"
       }
     },
@@ -72,7 +72,7 @@
       "rating": 2,
       "description": "A glossy black volcanic glass.",
       "img": {
-        "src": "images/obsidian.jpg",
+        "src": "https://m.media-amazon.com/images/I/81FxSmQFvHL.jpg",
         "alt": "Obsidian"
       }
     },
@@ -83,7 +83,7 @@
       "rating": 1,
       "description": "A colorful mineral often used in education.",
       "img": {
-        "src": "images/fluorite.jpg",
+        "src": "https://yourprana.com/cdn/shop/files/1688-Fluorite-Rough-Medium.jpg?v=1693035797",
         "alt": "Fluorite"
       }
     },
@@ -94,7 +94,7 @@
       "rating": 4,
       "description": "A silvery stone known for grounding energy.",
       "img": {
-        "src": "images/hematite.jpg",
+        "src": "https://www.rocksandgemscanada.com/cdn/shop/files/IMG-9752_1800x1800.jpg?v=1708305526",
         "alt": "Hematite"
       }
     },
@@ -105,7 +105,7 @@
       "rating": 5,
       "description": "A white stone with gray veins that promotes calm.",
       "img": {
-        "src": "images/howlite.jpg",
+        "src": "https://i0.wp.com/i.pinimg.com/736x/60/a1/2f/60a12f8c14c1b1d2f4b753f7b5a40380.jpg?w=640&ssl=1",
         "alt": "Howlite"
       }
     },
@@ -116,7 +116,7 @@
       "rating": 3,
       "description": "An iridescent gemstone with shifting colors.",
       "img": {
-        "src": "images/opal.jpg",
+        "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimUBB_h2nFeNOmTEFBWW9I5Gh-OaJ1q2FnHXJyrRBgP0DzY6sRiWI4bRI7mOibJIp1jYpv4Y3rNA4PS7QxTih5HuK0U1QNf66XLyUU85HNFVaijaMA4FQ6udNau5sQz8g3ELHjArOdgS_1TzJV3I3jlwFTceDS55GDy0xB6HE8nY2ti12UnSWdJXGU/s1207/Boulder%20Pipe%20Opal.webp",
         "alt": "Opal"
       }
     },
@@ -127,7 +127,7 @@
       "rating": 2,
       "description": "A golden-brown stone with a cat-eye sheen.",
       "img": {
-        "src": "images/tigers_eye.jpg",
+        "src": "https://5.imimg.com/data5/SELLER/Default/2024/4/413274246/IH/JK/EH/28952191/tigers-eye-rough-stone.jpg",
         "alt": "Tiger's Eye"
       }
     },
@@ -138,7 +138,7 @@
       "rating": 2,
       "description": "A pale blue crystal associated with peace.",
       "img": {
-        "src": "images/celestine.jpg",
+        "src": "https://5.imimg.com/data5/ANDROID/Default/2024/3/403951594/CR/GH/MD/36766811/product-jpeg-500x500.jpg",
         "alt": "Celestine"
       }
     },
@@ -149,7 +149,7 @@
       "rating": 3,
       "description": "A red-orange stone that boosts energy.",
       "img": {
-        "src": "images/carnelian.jpg",
+        "src": "https://i.etsystatic.com/45868493/r/il/3391f9/5928767042/il_fullxfull.5928767042_dct9.jpg",
         "alt": "Carnelian"
       }
     },
@@ -160,7 +160,7 @@
       "rating": 1,
       "description": "A greenish-blue stone that aids communication.",
       "img": {
-        "src": "images/amazonite.jpg",
+        "src": "https://shubhanjalistore.com/wp-content/uploads/2020/03/Amazonite-Rough-Raw-Stone-Shubhanjali-4.jpg",
         "alt": "Amazonite"
       }
     }

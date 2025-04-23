@@ -3,6 +3,7 @@ import { useState } from "react";
 export default function AddEntryForm({ onAdd, existingEntries }) {
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [formData, setFormData] = useState({
+    imgSrc: "",
     name: "",
     rating: "",
     size: "",
@@ -31,13 +32,13 @@ export default function AddEntryForm({ onAdd, existingEntries }) {
       size: formData.size,
       description: formData.description,
       img: {
-        src: "images/rocks-logo.png",
-        alt: "default picture"
+        src: formData.imgSrc || "https://atlas-content-cdn.pixelsquid.com/stock-images/rock-stone-AvXzl49-600.jpg",
+        alt: formData.name || "default picture"
       },
     };
 
     onAdd(newEntry);
-    setFormData({ name: "", rating: "", size: "", description: "" });
+    setFormData({ imgSrc: "", name: "", rating: "", size: "", description: "" });
     setIsFormVisible(false);
   }
 
@@ -49,6 +50,13 @@ export default function AddEntryForm({ onAdd, existingEntries }) {
         </div>
       ) : (
         <form className="new-entry-content" onClick={(e) => e.stopPropagation()} onSubmit={onSaveForm}>
+          <input
+            type="url"
+            name="imgSrc"
+            placeholder="image URL"
+            value={formData.imgSrc}
+            onChange={onNewDataInForm}
+          />
           <input
             type="text"
             name="name"
