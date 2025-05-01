@@ -10,7 +10,8 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap"
             rel="stylesheet">
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     </head>
     <body>
         <!-- Nagłówek z nazwą sklepu i menu -->
@@ -22,64 +23,72 @@
                     <span class="dos">DOS</span><span class="pl">.PL</span>
                 </h1>
                 <nav>
-                    <a href="/cart" title="Koszyk" >
-                        <span class="material-symbols-outlined" style="font-size: 38px;">shopping_cart</span>
+                    <a href="/cart" title="Koszyk">
+                        <span class="material-symbols-outlined"
+                            style="font-size: 38px;">shopping_cart</span>
                     </a>
-                    <span class="material-symbols-outlined" style="font-size: 38px;">person</span>
-                    <span class="material-symbols-outlined" style="font-size: 38px;">menu</span>                    
+                    <span class="material-symbols-outlined"
+                        style="font-size: 38px;">person</span>
+                    <span class="material-symbols-outlined"
+                        style="font-size: 38px;">menu</span>
                 </nav>
             </div>
         </header>
 
-        <!-- Sekcja produktów -->
-        <section class="products">
-            <% if (message) { %>
-            <div class="message"><%= message %></div>
-            <% } %>
+        <main>
+            <!-- Sekcja produktów -->
+            <section class="products">
+                <% if (message) { %>
+                <div class="message"><%= message %></div>
+                <% } %>
 
-            <ul class="product-list">
-                <% products.forEach(product => { %>
-                <li
-                    class="product-card <%= product.quantity === 0 ? 'out-of-stock' : '' %>">
-                    <a href="/product/<%= product.id %>">
-                        <img src="<%= product.image %>"
-                            alt="<%= product.name %>" class="product-image" />
-                    </a>
-                    <div class="product-details">
+                <ul class="product-list">
+                    <% products.forEach(product => { %>
+                    <li
+                        class="product-card <%= product.quantity === 0 ? 'out-of-stock' : '' %>">
                         <a href="/product/<%= product.id %>">
-                            <h3><%= product.name %></h3>
+                            <img src="<%= product.image %>"
+                                alt="<%= product.name %>"
+                                class="product-image" />
                         </a>
-                        <p><%= product.description %></p>
-                        <p class="product-price"><strong><%=
-                                product.price.toFixed(2) %> zł</strong></p>
+                        <div class="product-details">
+                            <a href="/product/<%= product.id %>">
+                                <h3><%= product.name %></h3>
+                            </a>
+                            <p><%= product.description %></p>
+                            <p class="product-price"><strong><%=
+                                    product.price.toFixed(2) %> zł</strong></p>
 
-                        <form method="POST" action="/cart/add-to-cart"
-                            class="add-to-cart-form">
-                            <input type="hidden" name="id"
-                                value="<%= product.id %>" />
+                            <form method="POST" action="/cart/add-to-cart"
+                                class="add-to-cart-form">
+                                <input type="hidden" name="id"
+                                    value="<%= product.id %>" />
 
-                            <label
-                                for="quantity-<%= product.id %>"></label>
-                            <input
-                                type="number"
-                                id="quantity-<%= product.id %>"
-                                name="quantity"
-                                min="1"
-                                max="<%= product.quantity %>"
-                                value="1"
-                                required
-                                <%=product.quantity === 0 ? 'disabled' : '' %>
-                            />
+                                <label
+                                    for="quantity-<%= product.id %>"></label>
+                                <input
+                                    type="number"
+                                    id="quantity-<%= product.id %>"
+                                    name="quantity"
+                                    min="1"
+                                    max="<%= product.quantity %>"
+                                    value="1"
+                                    required
+                                    <%=product.quantity === 0 ? 'disabled' : ''
+                                    %>
+                                />
 
-                            <button type="submit" class="add-to-cart-button"
-                                <%=product.quantity === 0 ? 'disabled' : ''
-                                %>>Add to Cart</button>
-                        </form>
-                    </div>
-                </li>
-                <% }); %>
-            </ul>
-        </section>
+                                <button type="submit" class="add-to-cart-button"
+                                    <%=product.quantity === 0 ? 'disabled' : ''
+                                    %>>Add to Cart</button>
+                            </form>
+                        </div>
+                    </li>
+                    <% }); %>
+                </ul>
+            </section>
+        </main>
+
         <footer>
             <p>Designed by</p>
             <p><b>Hanna Kerebińska</b></p>

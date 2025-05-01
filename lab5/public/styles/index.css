@@ -1,3 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+
 /* Ogólne ustawienia strony */
 body {
   font-family: Arial, sans-serif;
@@ -5,11 +16,19 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.add-to-cart-form input[type="number"], 
+main {
+  flex: 1;
+}
+
+.add-to-cart-form input[type="number"],
 .add-to-cart-button {
-  box-sizing: border-box; /* Uwzględnia padding i border w szerokości */
+  box-sizing: border-box;
+  /* Uwzględnia padding i border w szerokości */
 }
 
 /* Nagłówek */
@@ -22,11 +41,13 @@ header {
 }
 
 .dos {
-  color: #ec7208; /* np. pomarańczowy */
+  color: #ec7208;
+  /* np. pomarańczowy */
 }
 
 .pl {
-  color: #102d69; /* np. szary */
+  color: #102d69;
+  /* np. szary */
 }
 
 header .header-container {
@@ -103,7 +124,7 @@ header nav a {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   transition: transform 0.3s ease;
-  padding: 15px; 
+  padding: 15px;
 }
 
 .product-card:hover {
@@ -112,7 +133,8 @@ header nav a {
 
 .product-image {
   width: 100%;
-  height: 200px; /* Ustalono stałą wysokość */
+  height: 200px;
+  /* Ustalono stałą wysokość */
   object-fit: cover;
 }
 
@@ -130,12 +152,16 @@ header nav a {
   font-size: 14px;
   margin-bottom: 15px;
   color: #102d69;
-  
+
   /* Zastosowanie stylu obcinania tekstu, jeśli jest zbyt długi */
-  white-space: nowrap; /* Uniemożliwia złamanie wiersza */
-  overflow: hidden; /* Ukrywa nadmiar tekstu */
-  text-overflow: ellipsis; /* Dodaje "..." na końcu obciętego tekstu */
-  max-height: 60px; /* Ogranicza wysokość tekstu */
+  white-space: nowrap;
+  /* Uniemożliwia złamanie wiersza */
+  overflow: hidden;
+  /* Ukrywa nadmiar tekstu */
+  text-overflow: ellipsis;
+  /* Dodaje "..." na końcu obciętego tekstu */
+  max-height: 60px;
+  /* Ogranicza wysokość tekstu */
 }
 
 .product-details .product-price {
@@ -151,7 +177,7 @@ header nav a {
   margin-top: 10px;
   background-color: #ffffff;
   color: #ec7208;
-  border: 2px solid #ec7208; 
+  border: 2px solid #ec7208;
   padding: 10px 20px;
   font-size: 16px;
   font-weight: bold;
@@ -169,56 +195,76 @@ header nav a {
 
 /* Stylizacja dla input quantity */
 .add-to-cart-form input[type="number"] {
-  background-color: #ffffff; /* Białe tło */
-  color: #102d69; /* Kolor tekstu */
-  border: 2px solid #ec7208; /* Border o kolorze #ec7208 (pomarańczowy) */
-  padding: 10px 15px; /* Wewnętrzny padding */
-  font-size: 16px; /* Wielkość czcionki */
-  border-radius: 20px; /* Zaokrąglenie krawędzi */
-  transition: border-color 0.3s, background-color 0.3s; /* Płynna zmiana kolorów */
+  background-color: #ffffff;
+  /* Białe tło */
+  color: #102d69;
+  /* Kolor tekstu */
+  border: 2px solid #ec7208;
+  /* Border o kolorze #ec7208 (pomarańczowy) */
+  padding: 10px 15px;
+  /* Wewnętrzny padding */
+  font-size: 16px;
+  /* Wielkość czcionki */
+  border-radius: 20px;
+  /* Zaokrąglenie krawędzi */
+  transition: border-color 0.3s, background-color 0.3s;
+  /* Płynna zmiana kolorów */
   width: 100%;
 }
 
 /* Zmiana stylu border przy focus (po kliknięciu) */
 .add-to-cart-form input[type="number"]:focus {
-  outline: none; /* Usunięcie domyślnej ramki focus */
-  border-color: #ec7208; /* Kolor border przy focus (zielony) */
-  background-color: #ffffff; /* Lekka zmiana tła przy focus */
+  outline: none;
+  /* Usunięcie domyślnej ramki focus */
+  border-color: #ec7208;
+  /* Kolor border przy focus (zielony) */
+  background-color: #ffffff;
+  /* Lekka zmiana tła przy focus */
 }
 
 .add-to-cart-form input[type="number"]:disabled {
-  background-color: #f1f1f1; /* Kolor tła przy zablokowanym polu */
-  cursor: not-allowed; /* Zmiana kursora przy zablokowanym polu */
+  background-color: #f1f1f1;
+  /* Kolor tła przy zablokowanym polu */
+  cursor: not-allowed;
+  /* Zmiana kursora przy zablokowanym polu */
 }
 
 /* Stylizacja karty produktu, gdy jest "Out of Stock" */
 .out-of-stock {
-  opacity: 0.5;  /* Wyszarzenie karty produktu */
-  pointer-events: none;  /* Wyłączenie interakcji (np. kliknięć) */
+  opacity: 0.5;
+  /* Wyszarzenie karty produktu */
+  pointer-events: none;
+  /* Wyłączenie interakcji (np. kliknięć) */
 }
 
 /* Wyszarzenie przycisku, gdy produkt jest niedostępny */
 .out-of-stock .add-to-cart-button {
   background-color: #ccc;
-  cursor: not-allowed; /* Zmiana kursora na symbol zakazu */
+  cursor: not-allowed;
+  /* Zmiana kursora na symbol zakazu */
 }
 
 /* Wyszarzenie pola wyboru ilości, gdy produkt jest niedostępny */
 .out-of-stock input[type="number"] {
   background-color: #f1f1f1;
-  cursor: not-allowed; /* Zmiana kursora na symbol zakazu */
+  cursor: not-allowed;
+  /* Zmiana kursora na symbol zakazu */
 }
 
 /* Styl dla linku w nazwie produktu */
 .product-details h3 {
   text-decoration: none;
-  color: #102d69; /* Zmieniamy kolor tekstu na ciemniejszy */
-  font-size: 1.3rem; /* Zwiększamy czcionkę */
+  color: #102d69;
+  /* Zmieniamy kolor tekstu na ciemniejszy */
+  font-size: 1.3rem;
+  /* Zwiększamy czcionkę */
 }
 
 .product-details a {
-  text-decoration: none; /* Usuwamy podkreślenie */
-  color: inherit; /* Zapewnia, że kolor tekstu będzie dziedziczony po rodzicu */
+  text-decoration: none;
+  /* Usuwamy podkreślenie */
+  color: inherit;
+  /* Zapewnia, że kolor tekstu będzie dziedziczony po rodzicu */
 }
 
 footer {
@@ -227,7 +273,7 @@ footer {
   margin-top: auto;
   background: #eaecf3;
   box-sizing: border-box;
-  border-top: 4px solid #97a1c3; 
+  border-top: 4px solid #97a1c3;
 }
 
 footer p {
