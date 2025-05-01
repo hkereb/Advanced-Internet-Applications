@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Twój koszyk</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Twój koszyk</h1>
+
+    <% if (cart && cart.length > 0) { %>
+        <ul>
+            <% cart.forEach(product => { %>
+                <li>
+                    <h3><%= product.name %></h3>
+                    <p><strong>Opis:</strong> <%= product.description %></p>
+                    <p><strong>Cena:</strong> <%= product.price %> zł</p>
+                    <p><strong>Ilość:</strong> <%= product.quantity %></p>
+                    <form action="/cart/update-cart" method="POST">
+                        <input type="hidden" name="id" value="<%= product.id %>">
+                        <input type="number" name="quantity" value="<%= product.quantity %>" min="1">
+                        <button type="submit" name="action" value="update">Zaktualizuj</button>
+                    </form>
+                    <form action="/cart/update-cart" method="POST">
+                        <input type="hidden" name="id" value="<%= product.id %>">
+                        <button type="submit" name="action" value="remove">Usuń</button>
+                    </form>
+                </li>
+            <% }); %>
+        </ul>
+
+        <p><strong>Łączna kwota: </strong><%= total %> zł</p>
+
+        <form action="/cart/update-cart" method="POST">
+            <button name="action" value="cancel">Anuluj</button>
+            <button name="action" value="finalize">Finalizuj</button>
+        </form>
+    <% } else { %>
+        <p>Twój koszyk jest pusty.</p>
+    <% } %>
+</body>
+</html>

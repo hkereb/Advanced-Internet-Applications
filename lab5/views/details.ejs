@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <title><%= product.name %></title>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        <h1><%= product.name %></h1>
+
+        <!-- Obrazek produktu -->
+        <img src="<%= product.image %>" alt="<%= product.name %>" style="max-width:300px; height:auto;">
+
+        <p><strong>Opis:</strong> <%= product.description %></p>
+        <p><strong>Składniki:</strong> <%= product.ingredients %></p>
+        <p><strong>Ilość:</strong> <%= product.quantity %></p>
+        <p><strong>Cena:</strong> <%= Number(product.price).toFixed(2) %> zł</p>
+    </body>
+</html>

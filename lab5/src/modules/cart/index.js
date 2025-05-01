@@ -1,9 +1,12 @@
+// cart/index.js
 const express = require('express');
 const router = express.Router();
+const cartController = require('./controller');
 
-// przykładowa trasa
-router.get('/', (req, res) => {
-  res.send('Cart endpoint');
-});
+// Trasa GET dla widoku koszyka
+router.get('/', cartController.viewCart);
+
+// Trasa POST do aktualizacji koszyka
+router.post('/update-cart', cartController.updateCart);
 
 module.exports = router;
