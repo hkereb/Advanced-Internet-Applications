@@ -58,6 +58,7 @@ exports.addProductToCart = async (productId, quantity, sessionCart) => {
         cart.push({
             id: product.id,
             name: product.name,
+            image: product.image,
             description: product.description,
             price: product.price,
             quantity: quantity
