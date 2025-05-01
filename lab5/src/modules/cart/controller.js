@@ -30,25 +30,58 @@ exports.viewCart = (req, res) => {
     res.render('cart', { cart, total });
 };
 
-exports.updateCart = (req, res) => {
-    const { action, ...changes } = req.body;
+// Usuwanie produktu z koszyka
+exports.removeFromCart = (req, res) => {
+    const productId = parseInt(req.body.id);
     let cart = req.session.cart || [];
 
-    // Przetwarzanie akcji
-    if (action === 'cancel') {
-        cart = [];
-    } else if (action === 'finalize') {
-        // Zrealizuj zamówienie
-        console.log('Finalizowanie zamówienia...');
-        cart = [];
+    console.log('Koszyk przed usunięciem:', cart);
+
+    // Usuwamy produkt z koszyka
+    cart = cart.filter(item => item.id !== productId);
+    req.session.cart = cart;
+
+    console.log('Koszyk po usunięciu:', cart);
+
+    res.redirect('/cart');
+};
+
+exports.updateQuantity = (req, res) => {
+    const productId = parseInt(req.body.id);
+    const newQuantity = parseInt(req.body.quantityToBuy);
+    let cart = req.session.cart || [];
+
+    console.log('Dane przed aktualizacją:');
+    console.log('productId:', productId);
+    console.log('newQuantity:', newQuantity);
+
+    console.log('Koszyk przed aktualizacją:', cart);
+
+    // Znajdź produkt i zaktualizuj jego ilość
+    const product = cart.find(item => item.id === productId);
+    if (product) {
+        product.quantityToBuy = newQuantity;
+        console.log(`Zaktualizowano ilość produktu ${productId}: ${newQuantity}`);
+    } else {
+        console.log(`Nie znaleziono produktu o id ${productId}`);
     }
 
-    // Przetwarzanie usuwania produktów
-    cart = cartService.removeProducts(cart, changes);
-
-    // Przetwarzanie zmiany ilości produktów
-    cart = cartService.updateQuantities(cart, changes);
-
     req.session.cart = cart;
+
+    console.log('Koszyk po aktualizacji:', cart);
+
+    res.redirect('/cart');
+};
+
+// Anulowanie koszyka
+exports.cancelCart = (req, res) => {
+    req.session.cart = [];
+    res.redirect('/cart');
+};
+
+// Finalizacja zamówienia
+exports.finalizeOrder = (req, res) => {
+    console.log('Finalizowanie zamówienia...');
+    req.session.cart = [];
     res.redirect('/cart');
 };

@@ -1,43 +1,61 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Twój koszyk</title>
-    <link rel="stylesheet" href="/styles/cart.css">
-</head>
-<body>
-    <h1>Twój koszyk</h1>
+    <head>
+        <meta charset="UTF-8">
+        <title>Twój koszyk</title>
+        <link rel="stylesheet" href="/styles/cart.css">
+    </head>
+    <body>
+        <!-- Link powrotny -->
+        <div class="back-link">
+            <a href="/" class="button-link">← Powrót do strony głównej</a>
+        </div>
 
-    <% if (cart && cart.length > 0) { %>
+        <h1>Twój koszyk</h1>
+
+        <% if (cart && cart.length > 0) { %>
         <ul>
             <% cart.forEach(product => { %>
-                <li>
-                    <img src="<%= product.image %>" alt="<%= product.name %>" class="product-image">
-                    <h3><%= product.name %></h3>
-                    <p><strong>Opis:</strong> <%= product.description %></p>
-                    <p><strong>Cena:</strong> <%= product.price %> zł</p>
-                    <p><strong>Ilość:</strong> <%= product.quantity %></p>
-                    <form action="/cart/update-cart" method="POST">
-                        <input type="hidden" name="id" value="<%= product.id %>">
-                        <input type="number" name="quantity" value="<%= product.quantity %>" min="1">
-                        <button type="submit" name="action" value="update">Zaktualizuj</button>
-                    </form>
-                    <form action="/cart/update-cart" method="POST">
-                        <input type="hidden" name="id" value="<%= product.id %>">
-                        <button type="submit" name="action" value="remove">Usuń</button>
-                    </form>
-                </li>
+            <li>
+                <img src="<%= product.image %>" alt="<%= product.name %>"
+                    class="product-image">
+                <h3><%= product.name %></h3>
+                <p><strong>Ilość:</strong> <%= product.quantity %></p>
+                <p><strong>Cena:</strong> <%= product.price %> zł</p>
+
+                <!-- Formularz do aktualizacji ilości -->
+                <form action="/cart/update-quantity" method="POST">
+                    <input type="hidden" name="id" value="<%= product.id %>">
+                    <input
+                        type="number"
+                        name="quantityToBuy"
+                        value="<%= product.quantityToBuy %>"
+                        min="1"
+                        max="<%= product.quantity %>"
+                        required>
+                    <button type="submit">Zaktualizuj ilość</button>
+                </form>
+
+                <!-- Formularz do usunięcia produktu -->
+                <form action="/cart/remove-product" method="POST">
+                    <input type="hidden" name="id" value="<%= product.id %>">
+                    <button type="submit">Usuń</button>
+                </form>
+            </li>
             <% }); %>
         </ul>
 
         <p><strong>Łączna kwota: </strong><%= total %> zł</p>
 
-        <form action="/cart/update-cart" method="POST">
-            <button name="action" value="cancel">Anuluj</button>
-            <button name="action" value="finalize">Finalizuj</button>
+        <form action="/cart/cancel-cart" method="POST">
+            <button type="submit">Anuluj koszyk</button>
         </form>
-    <% } else { %>
+
+        <form action="/cart/finalize-order" method="POST">
+            <button type="submit">Finalizuj zamówienie</button>
+        </form>
+        <% } else { %>
         <p>Twój koszyk jest pusty.</p>
-    <% } %>
-</body>
+        <% } %>
+    </body>
 </html>

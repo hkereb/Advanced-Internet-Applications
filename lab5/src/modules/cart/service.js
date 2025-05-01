@@ -19,7 +19,6 @@ exports.removeProducts = (cart, changes) => {
     return cart;
 };
 
-// Funkcja do aktualizacji ilości produktów
 exports.updateQuantities = (cart, changes) => {
     Object.keys(changes).forEach(key => {
         if (key.startsWith('quantity_')) {
@@ -27,7 +26,7 @@ exports.updateQuantities = (cart, changes) => {
             const newQuantity = parseInt(changes[key]);
             const product = cart.find(item => item.id == productId);
             if (product) {
-                product.quantity = newQuantity;
+                product.quantity = newQuantity;  // Upewnij się, że ta linia zmienia ilość produktu
             }
         }
     });
@@ -38,7 +37,7 @@ exports.updateQuantities = (cart, changes) => {
 const productsModel = require('../products/model');  // Ścieżka do modelu produktów
 
 // Metoda dodająca produkt do koszyka
-exports.addProductToCart = async (productId, quantity, sessionCart) => {
+exports.addProductToCart = async (productId, quantityToBuy, sessionCart) => {
     const product = await productsModel.getProductById(productId);  // Sprawdzenie, czy produkt istnieje
 
     if (!product) {
@@ -52,7 +51,7 @@ exports.addProductToCart = async (productId, quantity, sessionCart) => {
 
     if (existingProduct) {
         // Jeśli produkt jest już w koszyku, aktualizujemy ilość
-        existingProduct.quantity += quantity;
+        existingProduct.quantity += quantityToBuy;
     } else {
         // Jeśli produkt nie ma w koszyku, dodajemy go
         cart.push({
@@ -61,9 +60,10 @@ exports.addProductToCart = async (productId, quantity, sessionCart) => {
             image: product.image,
             description: product.description,
             price: product.price,
-            quantity: quantity
+            quantity: product.quantity,
+            quantityToBuy: quantityToBuy
         });
     }
-
+    
     return cart;  // Zwracamy zaktualizowany koszyk
 };
