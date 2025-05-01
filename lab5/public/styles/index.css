@@ -210,6 +210,7 @@ header nav a {
   transition: border-color 0.3s, background-color 0.3s;
   /* Płynna zmiana kolorów */
   width: 100%;
+  text-align: center;
 }
 
 /* Zmiana stylu border przy focus (po kliknięciu) */

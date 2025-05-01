@@ -85,7 +85,7 @@ li {
     background: #fff;
     display: flex;
     align-items: center; /* wyśrodkowanie poziome */
-    gap: 12px;
+    gap: 32px;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);

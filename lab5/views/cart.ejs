@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>Twój koszyk</title>
@@ -39,22 +39,21 @@
                     <img src="<%= product.image %>" alt="<%= product.name %>"
                         class="product-image">
                     <h3><%= product.name %></h3>
-                    <p><strong>Ilość:</strong> <%= product.quantity %></p>
-                    <p><strong>Cena:</strong> <%= product.price %> zł</p>
 
                     <!-- Formularz do aktualizacji ilości -->
-                    <form action="/cart/update-quantity" method="POST">
-                        <input type="hidden" name="id"
-                            value="<%= product.id %>">
+                    <form action="/cart/update-quantity" method="POST" class="update-form">
+                        <input type="hidden" name="id" value="<%= product.id %>">
                         <input
                             type="number"
                             name="quantityToBuy"
                             value="<%= product.quantityToBuy %>"
                             min="1"
                             max="<%= product.quantity %>"
-                            required>
-                        <button type="submit">Zaktualizuj ilość</button>
-                    </form>
+                            required
+                            onchange="this.form.submit()">
+                    </form>   
+                    
+                    <p><strong>Cena:</strong> <%= product.price %> zł</p>
 
                     <!-- Formularz do usunięcia produktu -->
                     <form action="/cart/remove-product" method="POST" class="delete-form">
@@ -93,3 +92,32 @@
         </footer>
     </body>
 </html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const totalElement = document.querySelector('.cart-total');
+    
+        function recalculateTotal() {
+            let total = 0;
+            document.querySelectorAll('li').forEach(item => {
+                const quantityInput = item.querySelector('input[name="quantityToBuy"]');
+                const priceText = item.querySelector('p').textContent.match(/[\d,\.]+/);
+                const quantity = parseInt(quantityInput.value, 10) || 0;
+                const price = parseFloat(priceText?.[0].replace(',', '.')) || 0;
+    
+                total += price * quantity;
+            });
+    
+            totalElement.innerHTML = `<strong>Łączna kwota: </strong>${total.toFixed(2)} zł`;
+        }
+    
+        // Odpal przy zmianie ilości
+        document.querySelectorAll('input[name="quantityToBuy"]').forEach(input => {
+            input.addEventListener('input', recalculateTotal);
+        });
+    
+        // Odpal na starcie (opcjonalnie)
+        recalculateTotal();
+    });
+    </script>
+    
