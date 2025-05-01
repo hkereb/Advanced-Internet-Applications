@@ -33,3 +33,36 @@ exports.updateQuantities = (cart, changes) => {
     });
     return cart;
 };
+
+// cartService.js
+const productsModel = require('../products/model');  // Ścieżka do modelu produktów
+
+// Metoda dodająca produkt do koszyka
+exports.addProductToCart = async (productId, quantity, sessionCart) => {
+    const product = await productsModel.getProductById(productId);  // Sprawdzenie, czy produkt istnieje
+
+    if (!product) {
+        throw new Error('Produkt nie istnieje.');  // Jeśli produkt nie istnieje, rzucamy wyjątek
+    }
+
+    let cart = sessionCart || [];  // Jeśli koszyk nie istnieje w sesji, tworzymy pusty
+
+    // Sprawdzamy, czy produkt już jest w koszyku
+    const existingProduct = cart.find(item => item.id === product.id);
+
+    if (existingProduct) {
+        // Jeśli produkt jest już w koszyku, aktualizujemy ilość
+        existingProduct.quantity += quantity;
+    } else {
+        // Jeśli produkt nie ma w koszyku, dodajemy go
+        cart.push({
+            id: product.id,
+            name: product.name,
+            description: product.description,
+            price: product.price,
+            quantity: quantity
+        });
+    }
+
+    return cart;  // Zwracamy zaktualizowany koszyk
+};

@@ -35,7 +35,7 @@
                         <p><%= product.description %></p>
                         <p class="product-price">Price: <strong><%= product.price.toFixed(2) %> PLN</strong></p>
                         
-                        <form method="POST" action="/add-to-cart" class="add-to-cart-form">
+                        <form method="POST" action="/cart/add-to-cart" class="add-to-cart-form">
                             <input type="hidden" name="id" value="<%= product.id %>" />
                             
                             <label for="quantity-<%= product.id %>">Quantity:</label>

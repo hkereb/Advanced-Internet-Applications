@@ -16,3 +16,17 @@ exports.getAllProducts = async () => {
     throw err; // Jeśli wystąpi błąd, rzucamy go
   }
 };
+
+// Funkcja pobierająca produkt po ID
+exports.getProductById = async (id) => {
+    try {
+        // Wykonanie zapytania w MySQL
+        const [rows] = await db.execute('SELECT * FROM products WHERE id = ?', [id]);
+
+        // Zwracamy pierwszy wynik (jeśli istnieje)
+        return rows[0] || null;  // Jeśli nie ma takiego produktu, zwróci null
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+};
