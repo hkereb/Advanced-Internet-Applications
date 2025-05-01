@@ -8,28 +8,20 @@ exports.calculateTotal = (cart) => {
     return total;
 };
 
-// Funkcja do usuwania produktów z koszyka
-exports.removeProducts = (cart, changes) => {
-    Object.keys(changes).forEach(key => {
-        if (key.startsWith('remove_')) {
-            const productId = key.split('_')[1];
-            cart = cart.filter(item => item.id != productId);
-        }
-    });
-    return cart;
+// Usuwanie produktu z koszyka
+exports.removeProductFromCart = (productId, sessionCart) => {
+    return (sessionCart || []).filter(item => item.id !== productId);
 };
 
-exports.updateQuantities = (cart, changes) => {
-    Object.keys(changes).forEach(key => {
-        if (key.startsWith('quantity_')) {
-            const productId = key.split('_')[1];
-            const newQuantity = parseInt(changes[key]);
-            const product = cart.find(item => item.id == productId);
-            if (product) {
-                product.quantity = newQuantity;  // Upewnij się, że ta linia zmienia ilość produktu
-            }
-        }
-    });
+// Aktualizacja ilości produktu w koszyku
+exports.updateProductQuantity = (productId, newQuantity, sessionCart) => {
+    const cart = sessionCart || [];
+
+    const product = cart.find(item => item.id === productId);
+    if (product) {
+        product.quantityToBuy = newQuantity;
+    }
+
     return cart;
 };
 
@@ -64,6 +56,24 @@ exports.addProductToCart = async (productId, quantityToBuy, sessionCart) => {
             quantityToBuy: quantityToBuy
         });
     }
-    
+
     return cart;  // Zwracamy zaktualizowany koszyk
+};
+
+exports.finalizeOrder = async (cart) => {
+    for (const item of cart) {
+        const product = await productsModel.getProductById(item.id);
+
+        if (!product) {
+            throw new Error(`Produkt o ID ${item.id} nie istnieje.`);
+        }
+
+        if (product.quantity < item.quantityToBuy) {
+            throw new Error(`Produkt "${product.name}" ma tylko ${product.quantity} sztuk (żądano ${item.quantityToBuy}).`);
+        }
+
+        // Odejmujemy kupioną ilość z dostępnej
+        const newQuantity = product.quantity - item.quantityToBuy;
+        await productsModel.updateProductQuantity(item.id, newQuantity);
+    }
 };

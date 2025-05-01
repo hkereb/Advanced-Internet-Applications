@@ -30,3 +30,9 @@ exports.getProductById = async (id) => {
         return null;
     }
 };
+
+
+exports.updateProductQuantity = async (productId, newQuantity) => {
+    const sql = 'UPDATE products SET quantity = ? WHERE id = ?';
+    await db.query(sql, [newQuantity, productId]);
+};

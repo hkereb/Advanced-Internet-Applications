@@ -30,46 +30,21 @@ exports.viewCart = (req, res) => {
     res.render('cart', { cart, total });
 };
 
-// Usuwanie produktu z koszyka
+// Usuwanie produktu z koszyka – logika w service
 exports.removeFromCart = (req, res) => {
     const productId = parseInt(req.body.id);
-    let cart = req.session.cart || [];
-
-    console.log('Koszyk przed usunięciem:', cart);
-
-    // Usuwamy produkt z koszyka
-    cart = cart.filter(item => item.id !== productId);
-    req.session.cart = cart;
-
-    console.log('Koszyk po usunięciu:', cart);
-
+    const updatedCart = cartService.removeProductFromCart(productId, req.session.cart || []);
+    req.session.cart = updatedCart;
     res.redirect('/cart');
 };
 
+
+// Aktualizacja ilości – logika w service
 exports.updateQuantity = (req, res) => {
     const productId = parseInt(req.body.id);
     const newQuantity = parseInt(req.body.quantityToBuy);
-    let cart = req.session.cart || [];
-
-    console.log('Dane przed aktualizacją:');
-    console.log('productId:', productId);
-    console.log('newQuantity:', newQuantity);
-
-    console.log('Koszyk przed aktualizacją:', cart);
-
-    // Znajdź produkt i zaktualizuj jego ilość
-    const product = cart.find(item => item.id === productId);
-    if (product) {
-        product.quantityToBuy = newQuantity;
-        console.log(`Zaktualizowano ilość produktu ${productId}: ${newQuantity}`);
-    } else {
-        console.log(`Nie znaleziono produktu o id ${productId}`);
-    }
-
-    req.session.cart = cart;
-
-    console.log('Koszyk po aktualizacji:', cart);
-
+    const updatedCart = cartService.updateProductQuantity(productId, newQuantity, req.session.cart || []);
+    req.session.cart = updatedCart;
     res.redirect('/cart');
 };
 
@@ -79,9 +54,15 @@ exports.cancelCart = (req, res) => {
     res.redirect('/cart');
 };
 
-// Finalizacja zamówienia
-exports.finalizeOrder = (req, res) => {
-    console.log('Finalizowanie zamówienia...');
-    req.session.cart = [];
-    res.redirect('/cart');
+exports.finalizeOrder = async (req, res) => {
+    const cart = req.session.cart || [];
+
+    try {
+        await cartService.finalizeOrder(cart);
+        req.session.cart = [];  // Czyścimy koszyk po zaktualizowaniu
+        res.redirect('/cart');
+    } catch (error) {
+        console.error('Błąd podczas finalizacji zamówienia:', error.message);
+        res.status(500).send(`Błąd podczas finalizacji: ${error.message}`);
+    }
 };
