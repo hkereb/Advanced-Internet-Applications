@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Crystal Store</title>
+</head>
+<body>
+  <h1>Available Crystals</h1>
+
+  <% if (message) { %>
+    <p><%= message %></p>
+  <% } %>
+
+  <ul>
+    <% products.forEach(product => { %>
+      <li>
+        <h3><%= product.name %></h3>
+        <p><%= product.description %></p>
+        <img src="<%= product.image %>" alt="<%= product.name %>" width="150" />
+        <form method="POST" action="/add-to-cart">
+          <input type="hidden" name="id" value="<%= product.id %>" />
+          <button type="submit">Add to cart</button>
+        </form>
+      </li>
+    <% }); %>
+  </ul>
+
+  <a href="/cart">Go to Cart</a>
+</body>
+</html>
