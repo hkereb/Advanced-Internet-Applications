@@ -17,7 +17,7 @@ exports.addToCart = async (req, res) => {
 
         console.log(`Zaktualizowano koszyk. Liczba produktów w koszyku: ${updatedCart.length}`);
 
-        res.redirect('/cart');
+        res.redirect('/');
     } catch (error) {
         console.error('Błąd podczas dodawania produktu do koszyka:', error);
         res.status(500).send('Wystąpił błąd podczas dodawania produktu do koszyka.');

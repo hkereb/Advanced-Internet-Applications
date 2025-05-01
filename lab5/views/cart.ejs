@@ -12,6 +12,7 @@
         <ul>
             <% cart.forEach(product => { %>
                 <li>
+                    <img src="<%= product.image %>" alt="<%= product.name %>" class="product-image">
                     <h3><%= product.name %></h3>
                     <p><strong>Opis:</strong> <%= product.description %></p>
                     <p><strong>Cena:</strong> <%= product.price %> zł</p>
