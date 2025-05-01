@@ -122,3 +122,33 @@ header nav a:hover {
 .add-to-cart-button:hover {
   background-color: #45a049;
 }
+
+/* Stylizacja karty produktu, gdy jest "Out of Stock" */
+.out-of-stock {
+  opacity: 0.5;  /* Wyszarzenie karty produktu */
+  pointer-events: none;  /* Wyłączenie interakcji (np. kliknięć) */
+}
+
+/* Wyszarzenie przycisku, gdy produkt jest niedostępny */
+.out-of-stock .add-to-cart-button {
+  background-color: #ccc;
+  cursor: not-allowed; /* Zmiana kursora na symbol zakazu */
+}
+
+/* Wyszarzenie pola wyboru ilości, gdy produkt jest niedostępny */
+.out-of-stock input[type="number"] {
+  background-color: #f1f1f1;
+  cursor: not-allowed; /* Zmiana kursora na symbol zakazu */
+}
+
+/* Styl dla linku w nazwie produktu */
+.product-details h3 {
+  text-decoration: none;
+  color: #333; /* Zmieniamy kolor tekstu na ciemniejszy */
+  font-size: 1.3rem; /* Zwiększamy czcionkę */
+}
+
+.product-details a {
+  text-decoration: none; /* Usuwamy podkreślenie */
+  color: inherit; /* Zapewnia, że kolor tekstu będzie dziedziczony po rodzicu */
+}

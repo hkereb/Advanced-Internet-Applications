@@ -20,40 +20,49 @@
         <!-- Sekcja produktów -->
         <section class="products">
             <% if (message) { %>
-                <div class="message"><%= message %></div>
+            <div class="message"><%= message %></div>
             <% } %>
 
             <ul class="product-list">
                 <% products.forEach(product => { %>
-                <li class="product-card">
+                <li class="product-card <%= product.quantity === 0 ? 'out-of-stock' : '' %>">
                     <a href="/product/<%= product.id %>">
-                        <img src="<%= product.image %>" alt="<%= product.name %>" class="product-image"/>
+                        <img src="<%= product.image %>" alt="<%= product.name %>" class="product-image" />
                     </a>
                     <div class="product-details">
-                        <h3><%= product.name %></h3>
+                        <a href="/product/<%= product.id %>" >
+                            <h3><%= product.name %></h3>
+                         </a>
                         <p><%= product.description %></p>
-                        <p class="product-price">Price: <strong><%= product.price.toFixed(2) %> PLN</strong></p>
-                        
-                        <form method="POST" action="/cart/add-to-cart" class="add-to-cart-form">
-                            <input type="hidden" name="id" value="<%= product.id %>" />
-                            
-                            <label for="quantity-<%= product.id %>">Quantity:</label>
-                            <input 
-                                type="number" 
-                                id="quantity-<%= product.id %>" 
-                                name="quantity" 
-                                min="1" 
-                                max="<%= product.quantity %>" 
-                                value="1" 
-                                required 
+                        <p class="product-price">Price: <strong><%=
+                                product.price.toFixed(2) %> PLN</strong></p>
+
+                        <form method="POST" action="/cart/add-to-cart"
+                            class="add-to-cart-form">
+                            <input type="hidden" name="id"
+                                value="<%= product.id %>" />
+
+                            <label
+                                for="quantity-<%= product.id %>">Quantity:</label>
+                            <input
+                                type="number"
+                                id="quantity-<%= product.id %>"
+                                name="quantity"
+                                min="1"
+                                max="<%= product.quantity %>"
+                                value="1"
+                                required
+                                <%=product.quantity === 0 ? 'disabled' : '' %>
                             />
-            
-                            <button type="submit" class="add-to-cart-button">Add to Cart</button>
+
+                            <button type="submit" class="add-to-cart-button"
+                                <%=product.quantity === 0 ? 'disabled' : ''
+                                %>>Add to Cart</button>
                         </form>
                     </div>
                 </li>
                 <% }); %>
-            </ul>            
+            </ul>
         </section>
     </body>
 </html>
