@@ -1,24 +1,55 @@
-/* Reset podstawowy */
-* {
+/* Ogólne ustawienia strony */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: "Segoe UI", sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    padding: 20px;
-    line-height: 1.6;
+/* Nagłówek */
+header {
+    background-color: #ffffff;
+    color: #ec7208;
+    padding: 0px 0;
+    text-align: center;
+    border-bottom: 5px solid #ec7208;
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 2.2rem;
-    color: #222;
+.dos {
+    color: #ec7208;
+    /* np. pomarańczowy */
 }
+
+.pl {
+    color: #102d69;
+    /* np. szary */
+}
+
+header .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  header .header-container h1 {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+  }
+  
+  header nav a {
+    color: #102d69;
+    text-decoration: none;
+    padding-right: 10px;
+  }
+  
 
 /* Lista produktów */
 ul {
@@ -140,31 +171,21 @@ p:only-child {
     color: #888;
 }
 
-/* Responsywność */
-@media (max-width: 768px) {
-    li {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+footer {
+    padding: 15px;
+    line-height: 0.9;
+    margin-top: auto;
+    background: #eaecf3;
+    box-sizing: border-box;
+    border-top: 4px solid #97a1c3; 
+  }
 
-    .product-image {
-        width: 100%;
-        height: auto;
-    }
-
-    form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    form input[type="number"] {
-        margin-bottom: 10px;
-    }
-
-    form[action="/cart/update-cart"]:last-of-type {
-        flex-direction: column;
-        align-items: center;
-    }
-}
+footer p {
+    font-size: 15px;
+    color: #102d69;
+    text-align: center;
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    letter-spacing: 2px;
+  }

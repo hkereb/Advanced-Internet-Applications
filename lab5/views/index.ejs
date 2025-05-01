@@ -6,20 +6,27 @@
         <title>DOS.pl</title>
         <link rel="stylesheet" href="/styles/index.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=health_metrics" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap"
+            rel="stylesheet">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     </head>
     <body>
         <!-- Nagłówek z nazwą sklepu i menu -->
         <header>
             <div class="header-container">
                 <h1 class="logo">
-                    <span class="material-symbols-outlined" style="font-size: 58px;">health_metrics</span>
+                    <span class="material-symbols-outlined"
+                        style="font-size: 58px;">health_metrics</span>
                     <span class="dos">DOS</span><span class="pl">.PL</span>
                 </h1>
                 <nav>
-                    <a href="/cart">Go to Cart</a>
+                    <a href="/cart" title="Koszyk" >
+                        <span class="material-symbols-outlined" style="font-size: 38px;">shopping_cart</span>
+                    </a>
+                    <span class="material-symbols-outlined" style="font-size: 38px;">person</span>
+                    <span class="material-symbols-outlined" style="font-size: 38px;">menu</span>                    
                 </nav>
             </div>
         </header>
@@ -32,17 +39,19 @@
 
             <ul class="product-list">
                 <% products.forEach(product => { %>
-                <li class="product-card <%= product.quantity === 0 ? 'out-of-stock' : '' %>">
+                <li
+                    class="product-card <%= product.quantity === 0 ? 'out-of-stock' : '' %>">
                     <a href="/product/<%= product.id %>">
-                        <img src="<%= product.image %>" alt="<%= product.name %>" class="product-image" />
+                        <img src="<%= product.image %>"
+                            alt="<%= product.name %>" class="product-image" />
                     </a>
                     <div class="product-details">
-                        <a href="/product/<%= product.id %>" >
+                        <a href="/product/<%= product.id %>">
                             <h3><%= product.name %></h3>
-                         </a>
+                        </a>
                         <p><%= product.description %></p>
-                        <p class="product-price">Price: <strong><%=
-                                product.price.toFixed(2) %> PLN</strong></p>
+                        <p class="product-price"><strong><%=
+                                product.price.toFixed(2) %> zł</strong></p>
 
                         <form method="POST" action="/cart/add-to-cart"
                             class="add-to-cart-form">
@@ -50,7 +59,7 @@
                                 value="<%= product.id %>" />
 
                             <label
-                                for="quantity-<%= product.id %>">Quantity:</label>
+                                for="quantity-<%= product.id %>"></label>
                             <input
                                 type="number"
                                 id="quantity-<%= product.id %>"
@@ -71,5 +80,9 @@
                 <% }); %>
             </ul>
         </section>
+        <footer>
+            <p>Designed by</p>
+            <p><b>Hanna Kerebińska</b></p>
+        </footer>
     </body>
 </html>

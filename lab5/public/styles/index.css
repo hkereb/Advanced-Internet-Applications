@@ -1,10 +1,15 @@
 /* Ogólne ustawienia strony */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f7f7f7;
+  background-color: #ffffff;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.add-to-cart-form input[type="number"], 
+.add-to-cart-button {
+  box-sizing: border-box; /* Uwzględnia padding i border w szerokości */
 }
 
 /* Nagłówek */
@@ -42,18 +47,22 @@ header .header-container h1 {
   align-items: center;
 }
 
-header nav a {
-  color: #fff;
+header nav {
+  display: flex;
+  gap: 10px;
+  color: #102d69;
   text-decoration: none;
-  font-size: 16px;
-  padding: 10px 15px;
-  background-color: #102d69;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+  padding-right: 5px;
 }
 
-header nav a:hover {
-  background-color: #2c519b;
+header nav:hover {
+  cursor: pointer;
+}
+
+header nav a {
+  color: #102d69;
+  text-decoration: none;
+  text-decoration: none;
 }
 
 /* Sekcja produktów */
@@ -65,7 +74,7 @@ header nav a:hover {
 
 .products h2 {
   text-align: center;
-  color: #333;
+  color: #102d69;
   font-size: 32px;
   margin-bottom: 20px;
 }
@@ -91,9 +100,10 @@ header nav a:hover {
 .product-card {
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   transition: transform 0.3s ease;
+  padding: 15px; 
 }
 
 .product-card:hover {
@@ -102,7 +112,7 @@ header nav a:hover {
 
 .product-image {
   width: 100%;
-  height: 200px;
+  height: 200px; /* Ustalono stałą wysokość */
   object-fit: cover;
 }
 
@@ -113,12 +123,23 @@ header nav a:hover {
 .product-details h3 {
   font-size: 20px;
   margin-bottom: 10px;
+  color: #102d69;
 }
 
 .product-details p {
   font-size: 14px;
-  color: #555;
   margin-bottom: 15px;
+  color: #102d69;
+  
+  /* Zastosowanie stylu obcinania tekstu, jeśli jest zbyt długi */
+  white-space: nowrap; /* Uniemożliwia złamanie wiersza */
+  overflow: hidden; /* Ukrywa nadmiar tekstu */
+  text-overflow: ellipsis; /* Dodaje "..." na końcu obciętego tekstu */
+  max-height: 60px; /* Ogranicza wysokość tekstu */
+}
+
+.product-details .product-price {
+  font-size: 30px;
 }
 
 /* Przycisk dodawania do koszyka */
@@ -127,18 +148,47 @@ header nav a:hover {
 }
 
 .add-to-cart-button {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
+  margin-top: 10px;
+  background-color: #ffffff;
+  color: #ec7208;
+  border: 2px solid #ec7208; 
   padding: 10px 20px;
   font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 20px;
   transition: background-color 0.3s;
+  width: 100%;
 }
 
 .add-to-cart-button:hover {
-  background-color: #45a049;
+  background-color: #ec7208;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Stylizacja dla input quantity */
+.add-to-cart-form input[type="number"] {
+  background-color: #ffffff; /* Białe tło */
+  color: #102d69; /* Kolor tekstu */
+  border: 2px solid #ec7208; /* Border o kolorze #ec7208 (pomarańczowy) */
+  padding: 10px 15px; /* Wewnętrzny padding */
+  font-size: 16px; /* Wielkość czcionki */
+  border-radius: 20px; /* Zaokrąglenie krawędzi */
+  transition: border-color 0.3s, background-color 0.3s; /* Płynna zmiana kolorów */
+  width: 100%;
+}
+
+/* Zmiana stylu border przy focus (po kliknięciu) */
+.add-to-cart-form input[type="number"]:focus {
+  outline: none; /* Usunięcie domyślnej ramki focus */
+  border-color: #ec7208; /* Kolor border przy focus (zielony) */
+  background-color: #ffffff; /* Lekka zmiana tła przy focus */
+}
+
+.add-to-cart-form input[type="number"]:disabled {
+  background-color: #f1f1f1; /* Kolor tła przy zablokowanym polu */
+  cursor: not-allowed; /* Zmiana kursora przy zablokowanym polu */
 }
 
 /* Stylizacja karty produktu, gdy jest "Out of Stock" */
@@ -162,11 +212,30 @@ header nav a:hover {
 /* Styl dla linku w nazwie produktu */
 .product-details h3 {
   text-decoration: none;
-  color: #333; /* Zmieniamy kolor tekstu na ciemniejszy */
+  color: #102d69; /* Zmieniamy kolor tekstu na ciemniejszy */
   font-size: 1.3rem; /* Zwiększamy czcionkę */
 }
 
 .product-details a {
   text-decoration: none; /* Usuwamy podkreślenie */
   color: inherit; /* Zapewnia, że kolor tekstu będzie dziedziczony po rodzicu */
+}
+
+footer {
+  padding: 15px;
+  line-height: 0.9;
+  margin-top: auto;
+  background: #eaecf3;
+  box-sizing: border-box;
+  border-top: 4px solid #97a1c3; 
+}
+
+footer p {
+  font-size: 15px;
+  color: #102d69;
+  text-align: center;
+  font-family: "Cal Sans", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  letter-spacing: 2px;
 }
