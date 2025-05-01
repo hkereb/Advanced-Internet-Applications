@@ -9,10 +9,19 @@ body {
 
 /* Nagłówek */
 header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px 0;
+  background-color: #ffffff;
+  color: #ec7208;
+  padding: 0px 0;
   text-align: center;
+  border-bottom: 5px solid #ec7208;
+}
+
+.dos {
+  color: #ec7208; /* np. pomarańczowy */
+}
+
+.pl {
+  color: #102d69; /* np. szary */
 }
 
 header .header-container {
@@ -24,25 +33,34 @@ header .header-container {
   padding: 0 20px;
 }
 
+header .header-container h1 {
+  font-family: "Cal Sans", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+}
+
 header nav a {
   color: #fff;
   text-decoration: none;
   font-size: 16px;
   padding: 10px 15px;
-  background-color: #5C6BC0;
+  background-color: #102d69;
   border-radius: 5px;
   transition: background-color 0.3s;
 }
 
 header nav a:hover {
-  background-color: #3949AB;
+  background-color: #2c519b;
 }
 
 /* Sekcja produktów */
 .products {
   max-width: 1200px;
   margin: 20px auto;
-  padding: 0 20px;
+  padding: 40px 20px;
 }
 
 .products h2 {
