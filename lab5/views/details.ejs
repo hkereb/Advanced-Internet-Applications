@@ -23,18 +23,31 @@
                 </h1>
             </div>
         </header>
-        <h1><%= product.name %></h1>
 
-        <main>
+        <!-- Link powrotny -->
+        <div class="back-link">
+            <a href="/" class="button-link">← Back to Main Page</a>
+        </div>
+
+        <main class="product-container">
             <!-- Obrazek produktu -->
-            <img src="<%= product.image %>" alt="<%= product.name %>"
-                style="max-width:300px; height:auto;">
+            <img src="<%= product.image %>" alt="<%= product.name %>">
 
-            <p><strong>Opis:</strong> <%= product.description %></p>
-            <p><strong>Składniki:</strong> <%= product.ingredients %></p>
-            <p><strong>Ilość:</strong> <%= product.quantity %></p>
-            <p><strong>Cena:</strong> <%= Number(product.price).toFixed(2) %>
+            <h1><%= product.name %></h1>
+
+            <p><strong>Price:</strong> <%= Number(product.price).toFixed(2) %>
                 zł</p>
+            <div class="description-container">
+                <p class="desc-header"><strong>Description:</strong></p>
+                <p><%= product.description %></p>
+            </div>
+
+            <div class="ingredients-container">
+                <p class="desc-header"><strong>Ingredients:</strong></p>
+                <p><%= product.ingredients %></p>
+            </div>
+
+            <p><strong>Stock:</strong> <%= product.quantity %></p>
         </main>
 
         <footer>

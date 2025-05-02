@@ -22,6 +22,24 @@ body {
 
 main {
     flex: 1;
+    margin-top: 30px;
+    color: #102d69;
+    width: 60%;
+    justify-items: center;
+}
+
+main img {
+    width: 400px;
+    height: auto;
+}
+
+.back-link {
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+main h1 {
+    color: #102d69;
 }
 
 /* Nagłówek */
