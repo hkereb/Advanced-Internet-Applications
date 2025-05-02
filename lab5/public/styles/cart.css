@@ -22,11 +22,12 @@ body {
 
 main {
     flex: 1;
+    margin-bottom: 70px;
 }
 
 main h1 {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: bold;
     color: #102d69;
 }
@@ -73,6 +74,19 @@ header nav a {
     padding-right: 10px;
 }
 
+main .back-link {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+main .empty-cart {
+    margin-top: 200px;
+    text-align: center;
+    color: #102e6970;
+    font-weight: bold;
+    font-size: 60px;
+}
+
 /* Lista produktów w koszyku */
 ul {
     list-style: none;
@@ -81,11 +95,18 @@ ul {
     margin: 0 auto;
 }
 
+li .product-card {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    justify-content: space-between;
+}
+
 li {
     background: #fff;
     display: flex;
     align-items: center; /* wyśrodkowanie poziome */
-    gap: 32px;
+    gap: 45px;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -93,6 +114,10 @@ li {
     transition: transform 0.3s ease;
     position: relative;
 }
+
+li .update-form input[type="number"] {
+    text-align: center;
+} 
 
 li:hover {
     transform: translateY(-4px);

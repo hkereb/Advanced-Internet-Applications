@@ -23,6 +23,7 @@ body {
 
 main {
   flex: 1;
+  margin-bottom: 70px;
 }
 
 .add-to-cart-form input[type="number"],
@@ -90,7 +91,7 @@ header nav a {
 .products {
   max-width: 1200px;
   margin: 20px auto;
-  padding: 40px 20px;
+  padding: 60px 20px;
 }
 
 .products h2 {
