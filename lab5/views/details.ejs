@@ -35,8 +35,8 @@
 
             <h1><%= product.name %></h1>
 
-            <p><strong>Price:</strong> <%= Number(product.price).toFixed(2) %>
-                zł</p>
+            <p><strong>Price:</strong> <%= Number(product.price).toFixed(2) %>zł</p>
+            <p><strong>Stock:</strong> <%= product.quantity %></p>
             <div class="description-container">
                 <p class="desc-header"><strong>Description:</strong></p>
                 <p><%= product.description %></p>
@@ -46,8 +46,6 @@
                 <p class="desc-header"><strong>Ingredients:</strong></p>
                 <p><%= product.ingredients %></p>
             </div>
-
-            <p><strong>Stock:</strong> <%= product.quantity %></p>
         </main>
 
         <footer>
