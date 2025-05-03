@@ -33,18 +33,21 @@
             <!-- Obrazek produktu -->
             <img src="<%= product.image %>" alt="<%= product.name %>">
 
-            <h1><%= product.name %></h1>
+            <div class="product-info">
+                <h1><%= product.name %></h1>
 
-            <p><strong>Price:</strong> <%= Number(product.price).toFixed(2) %>zł</p>
-            <p><strong>Stock:</strong> <%= product.quantity %></p>
-            <div class="description-container">
-                <p class="desc-header"><strong>Description:</strong></p>
-                <p><%= product.description %></p>
-            </div>
+                <p><strong>Price:</strong> <%= Number(product.price).toFixed(2)
+                    %>zł</p>
+                <p><strong>Stock:</strong> <%= product.quantity %></p>
+                <div class="description-container">
+                    <p class="desc-header"><strong>Description:</strong></p>
+                    <p><%= product.description %></p>
+                </div>
 
-            <div class="ingredients-container">
-                <p class="desc-header"><strong>Ingredients:</strong></p>
-                <p><%= product.ingredients %></p>
+                <div class="ingredients-container">
+                    <p class="desc-header"><strong>Ingredients:</strong></p>
+                    <p><%= product.ingredients %></p>
+                </div>
             </div>
         </main>
 
@@ -70,4 +73,3 @@
         }
     });
 </script>
-

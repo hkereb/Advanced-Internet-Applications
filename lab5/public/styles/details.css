@@ -24,14 +24,28 @@ main {
     flex: 1;
     margin-top: 30px;
     color: #102d69;
-    margin-left: 400px;
-    margin-right: 400px;
+    margin-left: 300px;
+    margin-right: 300px;
     justify-items: center;
     margin-bottom: 50px;
 }
 
-main h1, p, div {
+.product-container {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+main h1,
+p,
+div {
     justify-self: flex-start;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    padding-bottom: 20px;
 }
 
 main img {
@@ -92,6 +106,7 @@ header nav a {
     padding-right: 10px;
 }
 
+
 footer {
     padding: 15px;
     line-height: 0.9;
@@ -109,4 +124,5 @@ footer p {
     font-weight: 800;
     font-style: normal;
     letter-spacing: 2px;
+    justify-self: center;
 }

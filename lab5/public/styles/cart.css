@@ -187,6 +187,7 @@ button {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
+    padding-top: 50px;
 }
 
 .left-button {
@@ -227,6 +228,7 @@ button:hover {
     text-align: right;
     font-size: 1.2rem;
     color: #102d69;
+    padding-right: 10px;
 }
 
 /* Przyciski końcowe */
