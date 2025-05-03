@@ -90,7 +90,10 @@
             </div>
 
             <% } else { %>
-            <p class="empty-cart">The Cart is Empty.</p>
+            <div class="empty-cart">
+                <span>No Products</span>
+                <span class="material-symbols-outlined" style="font-size: 60px;">shopping_bag</span>
+            </div>
             <% } %>
         </main>
 
@@ -128,3 +131,20 @@
         recalculateTotal();
     });
     </script>
+
+<script>
+    // Zapisz scroll przed przeładowaniem
+    window.addEventListener('beforeunload', () => {
+        localStorage.setItem('scrollPosition', window.scrollY);
+    });
+
+    // Przywróć scroll po załadowaniu
+    window.addEventListener('load', () => {
+        const scrollY = localStorage.getItem('scrollPosition');
+        if (scrollY !== null) {
+            window.scrollTo(0, parseInt(scrollY));
+            localStorage.removeItem('scrollPosition'); // opcjonalnie czyści
+        }
+    });
+</script>
+

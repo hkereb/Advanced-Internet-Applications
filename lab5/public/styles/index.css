@@ -23,7 +23,7 @@ body {
 
 main {
   flex: 1;
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 }
 
 .add-to-cart-form input[type="number"],
