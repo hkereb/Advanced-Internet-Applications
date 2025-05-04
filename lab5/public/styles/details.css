@@ -22,17 +22,23 @@ body {
 
 main {
     flex: 1;
-    margin-top: 30px;
+    margin: 30px auto 50px auto;
     color: #102d69;
-    margin-left: 300px;
-    margin-right: 300px;
-    justify-items: center;
-    margin-bottom: 50px;
+    padding: 0 20px;
+    max-width: 1000px; /* Szeroka karta, ale ograniczona */
+    width: 100%;
 }
 
+
 .product-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px; /* padding wewnątrz karty */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 main h1,
@@ -44,13 +50,15 @@ div {
 .product-info {
     display: flex;
     flex-direction: column;
-    padding-left: 30px;
-    padding-bottom: 20px;
+    padding-top: 20px;
+    word-break: break-word; /* Zabezpieczenie długich słów */
 }
 
 main img {
-    width: 400px;
+    width: 100%;
+    max-width: 400px; /* Nie rośnie ponad 400px */
     height: auto;
+    align-self: center;
 }
 
 
