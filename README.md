@@ -38,3 +38,15 @@
 <p align="center">
   <img src="https://github.com/user-attachments/assets/a697b018-c497-46d1-a763-3ee8345ca272" alt="Screenshot 5" width="600">
 </p>
+
+## lab5 - Node.js
+<div align="center" style="font-weight: bold;">Pharmacy Store (JS, Node.js, MySQL, HTML, CSS)</div>  
+<br>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8cc078cd-7e26-4d2d-acf6-e87538457434" alt="Screenshot 5" width="600">
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/adb4e55b-1c34-471f-932e-207a93774e3a" alt="Screenshot 5" width="600">
+</p>
+
