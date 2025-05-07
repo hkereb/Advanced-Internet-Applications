@@ -1,4 +1,4 @@
-const productsModel = require('../products/model'); 
+const productsService = require('../products/service'); 
 
 exports.calculateTotal = (cart) => {
     let total = 0;
@@ -24,7 +24,7 @@ exports.updateProductQuantity = (productId, newQuantity, sessionCart) => {
 };
 
 exports.addProductToCart = async (productId, quantityToBuy, sessionCart) => {
-    const product = await productsModel.getProductById(productId); 
+    const product = await productsService.getProductById(productId); 
 
     if (!product) {
         throw new Error('Error product not found'); 
@@ -53,7 +53,7 @@ exports.addProductToCart = async (productId, quantityToBuy, sessionCart) => {
 
 exports.finalizeOrder = async (cart) => {
     for (const item of cart) {
-        const product = await productsModel.getProductById(item.id);
+        const product = await productsService.getProductById(item.id);
 
         if (!product) {
             throw new Error(`Product with id ${item.id} not found`);
@@ -64,6 +64,6 @@ exports.finalizeOrder = async (cart) => {
         }
 
         const newQuantity = product.quantity - item.quantityToBuy;
-        await productsModel.updateProductQuantity(item.id, newQuantity);
+        await productsService.updateProductQuantity(item.id, newQuantity);
     }
 };
