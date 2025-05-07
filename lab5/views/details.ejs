@@ -13,7 +13,6 @@
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     </head>
     <body>
-        <!-- Nagłówek z nazwą sklepu i menu -->
         <header>
             <div class="header-container">
                 <h1 class="logo">
@@ -24,20 +23,17 @@
             </div>
         </header>
 
-        <!-- Link powrotny -->
         <div class="back-link">
             <a href="/" class="button-link">← Back to Main Page</a>
         </div>
 
         <main class="product-container">
-            <!-- Obrazek produktu -->
             <img src="<%= product.image %>" alt="<%= product.name %>">
 
             <div class="product-info">
                 <h1><%= product.name %></h1>
 
-                <p><strong>Price:</strong> <%= Number(product.price).toFixed(2)
-                    %>zł</p>
+                <p><strong>Price:</strong> <%= Number(product.price).toFixed(2) %>zł</p>
                 <p><strong>Stock:</strong> <%= product.quantity %></p>
                 <div class="description-container">
                     <p class="desc-header"><strong>Description:</strong></p>
@@ -58,18 +54,19 @@
     </body>
 </html>
 
+<!-- REMEMBER SCROLL -->
 <script>
-    // Zapisz scroll przed przeładowaniem
+    // SAVE SCROLL
     window.addEventListener('beforeunload', () => {
         localStorage.setItem('scrollPosition', window.scrollY);
     });
 
-    // Przywróć scroll po załadowaniu
+    // BRING BACK SCROLL
     window.addEventListener('load', () => {
         const scrollY = localStorage.getItem('scrollPosition');
         if (scrollY !== null) {
             window.scrollTo(0, parseInt(scrollY));
-            localStorage.removeItem('scrollPosition'); // opcjonalnie czyści
+            localStorage.removeItem('scrollPosition');
         }
     });
 </script>

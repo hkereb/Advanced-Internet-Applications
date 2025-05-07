@@ -13,7 +13,6 @@
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     </head>
     <body>
-        <!-- Nagłówek z nazwą sklepu i menu -->
         <header>
             <div class="header-container">
                 <h1 class="logo">
@@ -25,7 +24,6 @@
         </header>
 
         <main>
-            <!-- Link powrotny -->
             <div class="back-link">
                 <a href="/" class="button-link">← Back to Main Page</a>
             </div>
@@ -42,7 +40,6 @@
                             class="product-image">
                         <h3><%= product.name %></h3>
 
-                        <!-- Formularz do aktualizacji ilości -->
                         <form action="/cart/update-quantity" method="POST"
                             class="update-form">
                             <input type="hidden" name="id"
@@ -59,7 +56,7 @@
 
                         <p><strong><%= product.price %> zł</strong></p>
                     </div>
-                    <!-- Formularz do usunięcia produktu -->
+                   
                     <form action="/cart/remove-product" method="POST"
                         class="delete-form">
                         <input type="hidden" name="id"
@@ -104,6 +101,7 @@
     </body>
 </html>
 
+<!-- CALCULATE TOTAL -->
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const totalElement = document.querySelector('.cart-total');
@@ -122,23 +120,22 @@
             totalElement.innerHTML = `<strong>Total: </strong>${total.toFixed(2)} zł`;
         }
     
-        // Odpal przy zmianie ilości
         document.querySelectorAll('input[name="quantityToBuy"]').forEach(input => {
             input.addEventListener('input', recalculateTotal);
         });
     
-        // Odpal na starcie (opcjonalnie)
         recalculateTotal();
     });
-    </script>
+</script>
 
+<!-- REMEMBER SCROLL -->
 <script>
-    // Zapisz scroll przed przeładowaniem
+    // SAVE SCROLL
     window.addEventListener('beforeunload', () => {
         localStorage.setItem('scrollPosition', window.scrollY);
     });
 
-    // Przywróć scroll po załadowaniu
+    // BRING BACK SCROLL
     window.addEventListener('load', () => {
         const scrollY = localStorage.getItem('scrollPosition');
         if (scrollY !== null) {

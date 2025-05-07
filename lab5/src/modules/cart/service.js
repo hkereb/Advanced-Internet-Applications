@@ -1,5 +1,5 @@
-// cart/service.js
-// Funkcja do obliczania całkowitej wartości koszyka
+const productsModel = require('../products/model'); 
+
 exports.calculateTotal = (cart) => {
     let total = 0;
     cart.forEach(item => {
@@ -8,12 +8,10 @@ exports.calculateTotal = (cart) => {
     return total;
 };
 
-// Usuwanie produktu z koszyka
 exports.removeProductFromCart = (productId, sessionCart) => {
     return (sessionCart || []).filter(item => item.id !== productId);
 };
 
-// Aktualizacja ilości produktu w koszyku
 exports.updateProductQuantity = (productId, newQuantity, sessionCart) => {
     const cart = sessionCart || [];
 
@@ -25,27 +23,20 @@ exports.updateProductQuantity = (productId, newQuantity, sessionCart) => {
     return cart;
 };
 
-// cartService.js
-const productsModel = require('../products/model');  // Ścieżka do modelu produktów
-
-// Metoda dodająca produkt do koszyka
 exports.addProductToCart = async (productId, quantityToBuy, sessionCart) => {
-    const product = await productsModel.getProductById(productId);  // Sprawdzenie, czy produkt istnieje
+    const product = await productsModel.getProductById(productId); 
 
     if (!product) {
-        throw new Error('Produkt nie istnieje.');  // Jeśli produkt nie istnieje, rzucamy wyjątek
+        throw new Error('Error product not found'); 
     }
 
-    let cart = sessionCart || [];  // Jeśli koszyk nie istnieje w sesji, tworzymy pusty
+    let cart = sessionCart || []; 
 
-    // Sprawdzamy, czy produkt już jest w koszyku
     const existingProduct = cart.find(item => item.id === product.id);
 
     if (existingProduct) {
-        // Jeśli produkt jest już w koszyku, aktualizujemy ilość
         existingProduct.quantity += quantityToBuy;
     } else {
-        // Jeśli produkt nie ma w koszyku, dodajemy go
         cart.push({
             id: product.id,
             name: product.name,
@@ -57,7 +48,7 @@ exports.addProductToCart = async (productId, quantityToBuy, sessionCart) => {
         });
     }
 
-    return cart;  // Zwracamy zaktualizowany koszyk
+    return cart; 
 };
 
 exports.finalizeOrder = async (cart) => {
@@ -65,14 +56,13 @@ exports.finalizeOrder = async (cart) => {
         const product = await productsModel.getProductById(item.id);
 
         if (!product) {
-            throw new Error(`Produkt o ID ${item.id} nie istnieje.`);
+            throw new Error(`Product with id ${item.id} not found`);
         }
 
         if (product.quantity < item.quantityToBuy) {
-            throw new Error(`Produkt "${product.name}" ma tylko ${product.quantity} sztuk (żądano ${item.quantityToBuy}).`);
+            throw new Error(`Product "${product.name}" has ${product.quantity} units in stock, while ${item.quantityToBuy} units was requested.`);
         }
 
-        // Odejmujemy kupioną ilość z dostępnej
         const newQuantity = product.quantity - item.quantityToBuy;
         await productsModel.updateProductQuantity(item.id, newQuantity);
     }

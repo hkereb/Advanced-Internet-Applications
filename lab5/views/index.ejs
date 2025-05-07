@@ -14,7 +14,7 @@
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     </head>
     <body>
-        <!-- Nagłówek z nazwą sklepu i menu -->
+        <!-- HEADER -->
         <header>
             <div class="header-container">
                 <h1 class="logo">
@@ -36,7 +36,7 @@
         </header>
 
         <main>
-            <!-- Sekcja produktów -->
+            <!-- PRODUCTS -->
             <section class="products">
                 <% if (message) { %>
                 <div class="message"><%= message %></div>
@@ -89,6 +89,7 @@
             </section>
         </main>
 
+        <!-- FOOTER -->
         <footer>
             <p>Designed by</p>
             <p><b>Hanna Kerebińska</b></p>
@@ -96,18 +97,19 @@
     </body>
 </html>
 
+<!-- REMEMBER SCROLL -->
 <script>
-    // Zapisz scroll przed przeładowaniem
+    // SAVE SCROLL
     window.addEventListener('beforeunload', () => {
         localStorage.setItem('scrollPosition', window.scrollY);
     });
 
-    // Przywróć scroll po załadowaniu
+    // BRING BACK SCROLL
     window.addEventListener('load', () => {
         const scrollY = localStorage.getItem('scrollPosition');
         if (scrollY !== null) {
             window.scrollTo(0, parseInt(scrollY));
-            localStorage.removeItem('scrollPosition'); // opcjonalnie czyści
+            localStorage.removeItem('scrollPosition');
         }
     });
 </script>
