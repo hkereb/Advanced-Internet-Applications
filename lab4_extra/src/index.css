@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: #121212;
+  color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  padding: 0;
+}
+
+.header {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 28px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.box {
+  background-color: #1e1e1ee4;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  justify-self: center;
+}
+
+.text {
+  font-size: 18px;
+  margin-bottom: 20px;
+  white-space: pre-line;
+}
+
+.choices button {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.choices button:hover {
+  background-color: #444;
+}
+
+.message {
+  font-style: italic;
+  color: #ffff99;
+  margin-bottom: 10px;
+  justify-self: center;
+}
+
+.restart-button {
+  background-color: #333;
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.restart-button:hover {
+  background-color: #444;
+}
+
+.restart-button-def {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: #ffffffcc;
+  border: 1px solid #ccc;
+  padding: 4px 6px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 18px;
+}
+
+.restart-button-def .material-icons {
+  font-size: 20px; /* zmniejsza ikonę */
+  vertical-align: middle;
+}
+
+.restart-button-def:hover .material-icons {
+  color: #858585;
+}

@@ -1,0 +1,197 @@
+{
+    "start": {
+        "background": "https://img.stablecog.com/insecure/1920w/aHR0cHM6Ly9iLnN0YWJsZWNvZy5jb20vYTBmNGUxZDctYzQ3MC00NDQwLTg2MGEtYWQzOTY5ZjYzYzc4LmpwZWc.webp",
+        "text": "One morning, you wake up to find the town elder standing at your bedside.\n- You are the Chosen One - he says. - Destined to defeat the Dark Lord and save the realm!\n\nThis would be great, if you wanted to be a hero. But you don’t. You had very different plans for today - mostly involving breakfast and avoiding responsibilities.",
+        "choices": [
+            {
+                "text": "You blink slowly, still clutching your blanket",
+                "next": "intro_1"
+            }
+        ]
+    },
+    "intro_1": {
+        "background": "https://img.stablecog.com/insecure/1920w/aHR0cHM6Ly9iLnN0YWJsZWNvZy5jb20vYTBmNGUxZDctYzQ3MC00NDQwLTg2MGEtYWQzOTY5ZjYzYzc4LmpwZWc.webp",
+        "text": "Despite your blinking, the elder doesn't disappear. In fact, he sits down on the edge of your bed, uninvited.\n- Prophecy says you'd be reluctant at first, - he mutters, pulling out a crumpled scroll.\n\nYou’re still hoping this is a hallucination. All you want is to get back to your carefully crafted life of anonymity and low expectations.",
+        "choices": [
+            {
+                "text": "Sit up and ask what this is all about",
+                "next": "intro_2"
+            }
+        ]
+    },
+    "intro_2": {
+        "background": "https://img.stablecog.com/insecure/1920w/aHR0cHM6Ly9iLnN0YWJsZWNvZy5jb20vYTBmNGUxZDctYzQ3MC00NDQwLTg2MGEtYWQzOTY5ZjYzYzc4LmpwZWc.webp",
+        "text": "- Born under a blood moon, marked by the sign of the fox, and known to oversleep on important days... - the elder recites.\n\nYou feel vaguely attacked.\n\n- It’s all here. You're the only one who can stop the Dark Lord before the eclipse.",
+        "choices": [
+            {
+                "text": "Pretend to be honored while you try to think of an excuse",
+                "next": "honored_response"
+            },
+            {
+                "text": "Panic and jump out the window",
+                "next": "jump_window"
+            },
+            {
+                "text": "Yell for your mom — maybe she can deal with this",
+                "next": "call_mom"
+            }
+        ]
+    },
+    "honored_response": {
+        "background": "https://img.stablecog.com/insecure/1920w/aHR0cHM6Ly9iLnN0YWJsZWNvZy5jb20vYTBmNGUxZDctYzQ3MC00NDQwLTg2MGEtYWQzOTY5ZjYzYzc4LmpwZWc.webp",
+        "text": "You nod solemnly and mutter something about fighting The Dark Lord being at the top of your bucket list. The elder beams and hands you a glowing sword. It hums with ancient power. You really don't want to hold it.",
+        "choices": [
+            {
+                "text": "Fake an allergic reaction to magic weapons",
+                "chance": 1.0,
+                "next": "allergy_success",
+                "alt_next": "allergy_failure"
+            },
+            {
+                "text": "Accept the sword and make plans to lose it later",
+                "next": "accept_sword"
+            },
+            {
+                "text": "Ask if the sword has a less shiny version",
+                "next": "downgrade_weapon"
+            }
+        ]
+    },
+    "jump_window": {
+        "text": "You crash into the cabbage cart below. The towns people rush to help you up — they think it was a symbolic leap of courage. You're now being paraded around the village.",
+        "choices": [
+            {
+                "text": "Play along until you can sneak away",
+                "next": "sneak_away"
+            },
+            {
+                "text": "Pretend you hit your head and have amnesia",
+                "next": "amnesia_act"
+            },
+            {
+                "text": "Declare you meant to do that as training",
+                "next": "cabbage_training"
+            }
+        ]
+    },
+    "allergy_success": {
+        "background": "https://img.stablecog.com/insecure/1920w/aHR0cHM6Ly9iLnN0YWJsZWNvZy5jb20vYTBmNGUxZDctYzQ3MC00NDQwLTg2MGEtYWQzOTY5ZjYzYzc4LmpwZWc.webp",
+        "text": "You clutch your chest and gasp.\n- Magic metal... hives... itching!\n\n The elder looks horrified.\n- My apologies! I had no idea! - He hastily takes the sword away and gives you a ceremonial stick instead. - Crafted from ethically sourced wood, hypoallergenic and vegan-friendly.",
+        "choices": [
+            {
+                "text": "Thank him profusely and leave quickly",
+                "next": "leave_with_stick"
+            },
+            {
+                "text": "Ask what the stick does exactly",
+                "next": "inspect_stick"
+            }
+        ]
+    },
+    "allergy_failure": {
+        "text": "You pretend to wheeze, but the elder narrows his eyes. 'A clever ruse. Destiny cannot be denied.' He presses the sword into your hand. It tingles ominously.",
+        "choices": [
+            {
+                "text": "Reluctantly accept your fate",
+                "next": "reluctant_hero"
+            },
+            {
+                "text": "Try to pawn the sword off on a nearby goblin",
+                "next": "pawn_to_goblin"
+            }
+        ]
+    },
+    "leave_with_stick": {
+        "background": "https://i0.wp.com/thenerdd.com/wp-content/uploads/2021/05/1.jpg?fit=1200%2C624&ssl=1",
+        "text": "You bow deeply, gripping your hypoallergenic ceremonial stick like it’s the most important artifact in history. Before the elder can assign you a magical animal companion or a sacred quest scroll, you briskly exit the hut.\n\nOutside, the town is just waking up. You still have a chance to slip away unnoticed—or at least stall your fate a little longer.",
+        "choices": [
+            {
+                "text": "Head straight for the city gates and make a run for it",
+                "chance": 1.0,
+                "next": "gate_escape_success",
+                "alt_next": "gate_escape_failure"
+            },
+            {
+                "text": "Detour to the tavern for one last drink before the nonsense begins",
+                "next": "tavern_scene"
+            }
+        ]
+    },
+    "gate_escape_success": {
+        "background": "https://img.freepik.com/premium-photo/road-mountains-with-sunset-background_883586-10906.jpg",
+        "text": "You duck behind hay carts, wave politely at a group of confused bakers, and dramatically roll under a suspiciously low fence. By some miracle -or maybe because the guards are still finishing their breakfast- you slip through the gates undetected.\n\nYou're out. You’re free. You’re still clutching the ceremonial stick like it's a divine relic. The road ahead is open, uncertain, and most importantly, far from destiny.\n\nYou hum a victory tune and head off down the path, no prophecy in sight.",
+        "choices": [
+            {
+                "text": "March confidently toward the nearest forest, that’s what other people do in stories",
+                "next": "forest_scene"
+            },
+            {
+                "text": "Walk to the other side of the path and ask an elderly person for directions",
+                "next": "meet_prophet"
+            }
+        ]
+    },
+    "gate_escape_failure": {
+        "background": "https://img.stablecog.com/insecure/1920w/aHR0cHM6Ly9pLmdlbmVyaWMtYXNzZXRzLmZveGFzZXQuY29tL2d1YXJkcy1nYXRlLXN0b3AuanBn",
+        "text": "Just as you approach the gates, a pair of guards step forward.\n\n- Hold it! Where do you think you're going with that suspiciously ornate stick?\n\nYou smile nervously.\n\n- Gentlemen, this isn't just any stick. It's um... crafted from ethically sourced wood, hypoallergenic and...vegan-friendly?\n\nOne of the guards squints at it, then nods thoughtfully.\n\n- You know… my wife’s garden could use something like this. She’s always complaining about her tomato plants falling over. Mind if I take it off your hands?\n\nYou hand over the stick with your best 'happy to help' smile.\n\nThe guard steps aside, letting you pass through the gates unchallenged.",
+        "choices": [
+            {
+                "text": "Walk calmly away and don't look back. Ever.",
+                "next": "forest_scene"
+            },
+            {
+                "text": "Break into a light jog toward the horizon, just in case the other guard changes his mind",
+                "next": "barn_scene"
+            }
+        ]
+    },
+    "meet_prophet": {
+        "background": "https://img.freepik.com/premium-photo/road-mountains-with-sunset-background_883586-10906.jpg",
+        "text": "You approach an elderly person sitting quietly by the path. Just as you open your mouth to ask for directions, the figure turns around slowly, dramatically... too dramatically.\n\nIt's the prophet. THAT prophet.\n\nHis eyes light up like you've just returned from slaying a hundred dragons.\n\n- There you are! I knew it! Training in secret, weren’t you? Deep undercover! What dedication!\n\nYou open your mouth to object, but it's too late.\n\n- No time to waste! The Dark Lord’s fortress awaits.\n\nBefore you can fake a cramp or pretend to faint, he’s cheerfully dragging you toward your doom.",
+        "choices": [
+            {
+                "text": "You’re starving and tired of running — might as well get this over with",
+                "next": "prophet_takes_to_lord"
+            },
+            {
+                "text": "Throw yourself to the ground and yell 'I don't wanna!'",
+                "chance": 0.0,
+                "next": "end_say_no_success",
+                "alt_next": "say_no_failure"
+            }
+        ]
+    },
+    "end_say_no_success": {
+        "background": "https://img.freepik.com/premium-photo/road-mountains-with-sunset-background_883586-10906.jpg",
+        "text": "You fling yourself to the ground, fists pounding the dirt, legs kicking wildly.\n\n- I DON’T WANNA! I NEVER WANTED TO BE A HERO! I HATE PROPHECIES AND I’M ALLERGIC TO DESTINY!\n\nThe prophet blinks, clearly startled.\n\n- Oh! Well why didn’t you say so sooner? Sorry about the whole ‘fate of the world’ thing. I’ll just find someone else, then. Maybe that goat farmer’s kid.\n\nYou watch as he wanders off toward a hill, muttering something about backup heroes and contingency scrolls.\n\nRelieved, you dust yourself off, toss the ceremonial stick into a bush, and head home.\n\nYou live a long, peaceful life, open a bakery, and never hear from destiny again.",
+        "choices": []
+    },
+    "say_no_failure": {
+        "background": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c0236e8e-8042-4ee1-8dd6-c64bb219d5be/dgqnbsx-c58fe15b-6010-44a8-bbfa-c10cea058157.png/v1/fill/w_1920,h_1077,q_80,strp/dnd__underworld__by_bergionstyle_dgqnbsx-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA3NyIsInBhdGgiOiJcL2ZcL2MwMjM2ZThlLTgwNDItNGVlMS04ZGQ2LWM2NGJiMjE5ZDViZVwvZGdxbmJzeC1jNThmZTE1Yi02MDEwLTQ0YTgtYmJmYS1jMTBjZWEwNTgxNTcucG5nIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.sHJS6NSYAGloHnbjDZUhTVe9WjRD3blPqTpz7Iw-fsU",
+        "text": "The prophet sighs deeply as you throw yourself to the ground, arms flailing like a toddler denied candy.\n\n- Oh dear, really? I was hoping for a bit more fight from you.\n\nWith a gentle but firm grip, he hauls you up before you can protest again.\n\n- No time for tantrums! The Dark Lord won’t wait forever.\n\nYou trudge behind him, the ominous fortress looming in the distance.\n\nAs you approach, the air thickens and shadows lengthen. The gates creak open with an eerie groan.\n\nInside, the Dark Lord sits upon his throne, cloaked in darkness, his eyes burning with cold fire.\n\n- Be afraid, for I am the Dark Lord. You should tremble before me.\n\nHe leans forward, his voice like a dark storm, ready to consume you.",
+        "choices": [
+            {
+                "text": "Try to intimidate him with your fierce glare",
+                "next": "final_battle_intimidate"
+            },
+            {
+                "text": "Attempt to make small talk, hoping to find common ground",
+                "next": "final_battle_talk"
+            }
+        ]
+    },
+    "prophet_takes_to_lord": {
+        "background": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c0236e8e-8042-4ee1-8dd6-c64bb219d5be/dgqnbsx-c58fe15b-6010-44a8-bbfa-c10cea058157.png/v1/fill/w_1920,h_1077,q_80,strp/dnd__underworld__by_bergionstyle_dgqnbsx-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA3NyIsInBhdGgiOiJcL2ZcL2MwMjM2ZThlLTgwNDItNGVlMS04ZGQ2LWM2NGJiMjE5ZDViZVwvZGdxbmJzeC1jNThmZTE1Yi02MDEwLTQ0YTgtYmJmYS1jMTBjZWEwNTgxNTcucG5nIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.sHJS6NSYAGloHnbjDZUhTVe9WjRD3blPqTpz7Iw-fsU",
+        "text": "You let out a long, resigned sigh, accepting your fate.\n\nThe prophet smiles proudly.\n\n- That’s the spirit! Destiny calls!\n\nHe leads you through the growing shadows toward the Dark Lord’s fortress.\n\nThe gates open slowly, emitting a low, threatening creak.\n\nInside, the Dark Lord sits upon his throne, his presence dark and heavy.\n\n- Be afraid, for I am the Dark Lord. Fear is the only wisdom you’ll need here.\n\nHis gaze pierces through you, daring you to make a move.",
+        "choices": [
+            {
+                "text": "Try to intimidate him with your fierce glare",
+                "next": "final_battle_intimidate"
+            },
+            {
+                "text": "Attempt to make small talk, hoping to find common ground",
+                "next": "final_battle_talk"
+            }
+        ]
+    }
+}
