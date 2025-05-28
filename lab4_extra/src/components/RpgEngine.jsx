@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
 function RpgEngine() {
-  const [story, setStory] = useState(null);
+  const [story, setStory] = useState(null); // whole
   const [currentId, setCurrentId] = useState('start');
-  const [message, setMessage] = useState(null);
+  const [message, setMessage] = useState(null); // luck outcome
 
   useEffect(() => {
+    // side effects
     fetch('/story.json')
       .then((res) => res.json())
       .then(setStory);
@@ -22,7 +23,6 @@ function RpgEngine() {
     }
   };
 
-
   const restartGame = () => {
     setCurrentId('start');
     setMessage(null);
@@ -34,6 +34,7 @@ function RpgEngine() {
 
   const isEnd = !current.choices || current.choices.length === 0;
 
+  // change background
   const containerStyle = current.background
     ? {
       backgroundImage: `url(${current.background})`,
